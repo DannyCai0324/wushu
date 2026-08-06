@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#100b1a">
 <meta name="apple-mobile-web-app-title" content="五術總本">
 <meta property="og:title" content="五術知識系統｜山・醫・命・相・卜">
-<meta property="og:description" content="山醫命相卜總本：古籍全文、章節脈絡、玄空飛星與奇門遁甲排盤器。">
+<meta property="og:description" content="山醫命相卜總本：古籍全文、九宮萬用對照卡、玄空飛星與奇門遁甲排盤器。">
 <meta property="og:type" content="website">
 <title>五術知識系統｜山・醫・命・相・卜</title>
 <style>
@@ -524,7 +524,25 @@ details.yw[open]{padding-bottom:8px}
     <tr><td>艮 ☶</td><td>山</td><td>止</td><td>少男</td><td>手</td><td>狗</td><td>土</td><td>東北</td><td>八</td></tr>
     <tr><td>坤 ☷</td><td>地</td><td>順</td><td>母</td><td>腹</td><td>牛</td><td>土</td><td>西南</td><td>二</td></tr>
   </table>
-  <div class="key">先天八卦（乾南坤北）主「體」、讀丹經卦理用；後天八卦（離南坎北）主「用」、一切術數方位操作用。此表的家人／身體欄是九星斷事與梅花取象的共同來源。</div>
+  <div class="key">先天八卦（乾南坤北）主「體」、讀丹經卦理用；後天八卦（離南坎北）主「用」、一切術數方位操作用。此表的家人／身體欄是九星斷事與梅花取象的共同來源；下面那張方位版把同一組資訊擺回九宮實際方位。</div>
+  <h4>九宮萬用對照卡——後天八卦的方位版 <small style="color:var(--dim)">（上南下北；底圖為共用，玄空九星與奇門星門為疊加層）</small></h4>
+  <p>上面的八卦總表是清單版，這張是<b>方位版</b>：把同一組資訊擺回洛書九宮的實際方位。後天卦、洛書數、家人、五行、先天卦、身體、外圈地支——這幾層是<b>五術共用的底圖</b>；玄空九星與奇門星門則是各家<b>疊在同一張底圖上的自家系統</b>，看的時候分層讀。</p>
+  <div class="svgbox"><figure>
+  <div style="text-align:center;margin:2px 0 8px">
+    <button id="fx-prev" class="fx-btn">◀</button>
+    <b id="fx-label" style="color:#e6c869;letter-spacing:1px;margin:0 12px"></b>
+    <button id="fx-next" class="fx-btn">▶</button>
+  </div>
+  <table class="nc">
+    <tr><td class="blank"></td><td class="zhi">巳蛇 09–11</td><td class="zhi">午馬 11–13</td><td class="zhi">未羊 13–15</td><td class="blank"></td></tr>
+    <tr><td class="zhi">辰龍 07–09</td><td><div class="nc-top"><span class="nc-gua">巽</span><span class="nc-sym">☴</span><span class="nc-num">4</span><span class="nc-fam">長女</span></div><div class="nc-row"><span class="wx wx-m">木</span>先天：兌　身：股</div><div class="nc-star">東南・四綠文曲<span class="fx-b" data-s="4"></span></div><div class="nc-row">星義：文昌・科名・文書</div><div><span class="nc-mean">開花結果・信用人脈</span></div><div class="nc-qm">奇門：天輔・杜門</div></td><td><div class="nc-top"><span class="nc-gua">離</span><span class="nc-sym">☲</span><span class="nc-num">9</span><span class="nc-fam">中女</span></div><div class="nc-row"><span class="wx wx-f">火</span>先天：乾　身：目</div><div class="nc-star">正南・九紫右弼<span class="fx-b" data-s="9"></span></div><div class="nc-row">星義：喜慶・姻緣・文明</div><div><span class="nc-mean">發展長大・顯露高峰</span></div><div class="nc-qm">奇門：天英・景門</div></td><td><div class="nc-top"><span class="nc-gua">坤</span><span class="nc-sym">☷</span><span class="nc-num">2</span><span class="nc-fam">母親</span></div><div class="nc-row"><span class="wx wx-t">土</span>先天：巽　身：腹</div><div class="nc-star">西南・二黑巨門<span class="fx-b" data-s="2"></span></div><div class="nc-row">星義：病符・田產・人母</div><div><span class="nc-mean">收貨庫存・承載耕耘</span></div><div class="nc-qm">奇門：天芮・死門</div></td><td class="zhi">申猴 15–17</td></tr>
+    <tr><td class="zhi">卯兔 05–07</td><td><div class="nc-top"><span class="nc-gua">震</span><span class="nc-sym">☳</span><span class="nc-num">3</span><span class="nc-fam">長男</span></div><div class="nc-row"><span class="wx wx-m">木</span>先天：離　身：足</div><div class="nc-star">正東・三碧祿存<span class="fx-b" data-s="3"></span></div><div class="nc-row">星義：是非・官刑・盜劫</div><div><span class="nc-mean">生發成長・啟動</span></div><div class="nc-qm">奇門：天沖・傷門</div></td><td class="center-cell"><div class="nc-top" style="justify-content:center"><span class="nc-gua">中宮</span><span class="nc-num">5</span></div><div class="nc-row" style="text-align:center"><span class="wx wx-t">土</span></div><div class="nc-star" style="text-align:center">五黃廉貞<span class="fx-b" data-s="5"></span></div><div class="nc-row" style="text-align:center">星義：災病凶煞・凶性最烈</div><div style="text-align:center"><span class="nc-mean">樞紐・蟄伏</span></div><div class="nc-qm" style="text-align:center">奇門：天禽</div></td><td><div class="nc-top"><span class="nc-gua">兌</span><span class="nc-sym">☱</span><span class="nc-num">7</span><span class="nc-fam">幼女</span></div><div class="nc-row"><span class="wx wx-j">金</span>先天：坎　身：口</div><div class="nc-star">正西・七赤破軍<span class="fx-b" data-s="7"></span></div><div class="nc-row">星義：口舌・盜劫・刀兵</div><div><span class="nc-mean">打開缺口・兌現收穫</span></div><div class="nc-qm">奇門：天柱・驚門</div></td><td class="zhi">酉雞 17–19</td></tr>
+    <tr><td class="zhi">寅虎 03–05</td><td><div class="nc-top"><span class="nc-gua">艮</span><span class="nc-sym">☶</span><span class="nc-num">8</span><span class="nc-fam">幼男</span></div><div class="nc-row"><span class="wx wx-t">土</span>先天：震　身：手</div><div class="nc-star">東北・八白左輔<span class="fx-b" data-s="8"></span></div><div class="nc-row">星義：財星・田產</div><div><span class="nc-mean">輸送根基・轉換</span></div><div class="nc-qm">奇門：天任・生門</div></td><td><div class="nc-top"><span class="nc-gua">坎</span><span class="nc-sym">☵</span><span class="nc-num">1</span><span class="nc-fam">中男</span></div><div class="nc-row"><span class="wx wx-s">水</span>先天：坤　身：耳</div><div class="nc-star">正北・一白貪狼<span class="fx-b" data-s="1"></span></div><div class="nc-row">星義：官貴・文魁・智慧・桃花</div><div><span class="nc-mean">存儲匯聚・種子</span></div><div class="nc-qm">奇門：天蓬・休門</div></td><td><div class="nc-top"><span class="nc-gua">乾</span><span class="nc-sym">☰</span><span class="nc-num">6</span><span class="nc-fam">父親</span></div><div class="nc-row"><span class="wx wx-j">金</span>先天：艮　身：首</div><div class="nc-star">西北・六白武曲<span class="fx-b" data-s="6"></span></div><div class="nc-row">星義：權威・武貴・驛馬</div><div><span class="nc-mean">資源權柄・決斷</span></div><div class="nc-qm">奇門：天心・開門</div></td><td class="zhi">戌狗 19–21</td></tr>
+    <tr><td class="blank"></td><td class="zhi">丑牛 01–03</td><td class="zhi">子鼠 23–01</td><td class="zhi">亥豬 21–23</td><td class="blank"></td></tr>
+  </table>
+  <figcaption>每格由上而下——<b>共用底圖</b>：後天卦・洛書數・家人 → 五行・先天卦・身體；<b>玄空疊加層</b>：九星＋當運旺衰（隨上方運別切換）→ 星義 → 意義關鍵詞；<b>奇門疊加層</b>：星門。外圈為十二地支生肖時辰</figcaption>
+  </figure></div>
+  <div class="note"><b>哪一支用哪幾層：</b>梅花、六爻取卦象、家人與身體（底圖）；擇時取外圈地支時辰（底圖）；<a href="#fs">相・玄空飛星</a>取九星與當運旺衰——按 ◀▶ 切換一運～九運，旺衰標籤即時更新，這就是「風水輪流轉」的完整版：沒有永遠的吉星，只有得時的星；<a href="#qimen">卜・奇門遁甲</a>取星門，但那是另一套動態起局系統，本圖只給它的本位。<br><b>底圖的用法：</b>每一星、每一門的性情都來自它的卦，斷事取象不必背斷語，回這格推即可。<br><b>玄空層的兩個例外：</b>五黃除五運當令外一律作大凶論；一白（官貴）、四綠（文昌）縱在失令之運，其吉義仍可取用（如佈置文昌位）。</div>
   <h4>檢核清單</h4>
   <ul>
     <li>能默寫五行配屬總表並解釋任兩行的生剋乘侮。</li>
@@ -7408,24 +7426,8 @@ details.yw[open]{padding-bottom:8px}
   <p>「巒頭無假、理氣無真」：理氣斷語必須落在實際形勢上驗證。基本功兩件——<b>形勢原則</b>（藏風聚氣：後有靠、前有明堂、左右有護）與<b>現代形煞辨識</b>（路沖、壁刀、反弓、天斬；室內穿堂風、樑壓床位）。山星到坐後有山（高樓）方論旺丁、向星到向前有水（馬路明堂）方論旺財——形理兼察是玄空正宗用法。</p>
   <h3>二、九星的本質（全章樞紐）</h3>
   <div class="key">所謂九星，就是<b>後天八卦帶著洛書數與五行，在九宮中隨時間流轉</b>。每顆星的性情全部來自它的卦：二黑是坤卦之氣故應母親腹胃、六白是乾卦之氣故應父親頭部權威、七赤是兌卦之氣故應口舌少女。斷事取象不必背斷語——回到八卦總表即可自行推出。</div>
-  <h4>九星本質・九宮萬用對照卡 <small style="color:var(--dim)">（上南下北・可切換九運看各星旺衰）</small></h4>
-  <div class="svgbox"><figure>
-  <div style="text-align:center;margin:2px 0 8px">
-    <button id="fx-prev" class="fx-btn">◀</button>
-    <b id="fx-label" style="color:#e6c869;letter-spacing:1px;margin:0 12px"></b>
-    <button id="fx-next" class="fx-btn">▶</button>
-  </div>
-  <table class="nc">
-    <tr><td class="blank"></td><td class="zhi">巳蛇 09–11</td><td class="zhi">午馬 11–13</td><td class="zhi">未羊 13–15</td><td class="blank"></td></tr>
-    <tr><td class="zhi">辰龍 07–09</td><td><div class="nc-top"><span class="nc-gua">巽</span><span class="nc-sym">☴</span><span class="nc-num">4</span><span class="nc-fam">長女</span></div><div class="nc-row"><span class="wx wx-m">木</span>先天：兌　身：股</div><div class="nc-star">東南・四綠文曲<span class="fx-b" data-s="4"></span></div><div class="nc-row">星義：文昌・科名・文書</div><div><span class="nc-mean">開花結果・信用人脈</span></div><div class="nc-qm">奇門：天輔・杜門</div></td><td><div class="nc-top"><span class="nc-gua">離</span><span class="nc-sym">☲</span><span class="nc-num">9</span><span class="nc-fam">中女</span></div><div class="nc-row"><span class="wx wx-f">火</span>先天：乾　身：目</div><div class="nc-star">正南・九紫右弼<span class="fx-b" data-s="9"></span></div><div class="nc-row">星義：喜慶・姻緣・文明</div><div><span class="nc-mean">發展長大・顯露高峰</span></div><div class="nc-qm">奇門：天英・景門</div></td><td><div class="nc-top"><span class="nc-gua">坤</span><span class="nc-sym">☷</span><span class="nc-num">2</span><span class="nc-fam">母親</span></div><div class="nc-row"><span class="wx wx-t">土</span>先天：巽　身：腹</div><div class="nc-star">西南・二黑巨門<span class="fx-b" data-s="2"></span></div><div class="nc-row">星義：病符・田產・人母</div><div><span class="nc-mean">收貨庫存・承載耕耘</span></div><div class="nc-qm">奇門：天芮・死門</div></td><td class="zhi">申猴 15–17</td></tr>
-    <tr><td class="zhi">卯兔 05–07</td><td><div class="nc-top"><span class="nc-gua">震</span><span class="nc-sym">☳</span><span class="nc-num">3</span><span class="nc-fam">長男</span></div><div class="nc-row"><span class="wx wx-m">木</span>先天：離　身：足</div><div class="nc-star">正東・三碧祿存<span class="fx-b" data-s="3"></span></div><div class="nc-row">星義：是非・官刑・盜劫</div><div><span class="nc-mean">生發成長・啟動</span></div><div class="nc-qm">奇門：天沖・傷門</div></td><td class="center-cell"><div class="nc-top" style="justify-content:center"><span class="nc-gua">中宮</span><span class="nc-num">5</span></div><div class="nc-row" style="text-align:center"><span class="wx wx-t">土</span></div><div class="nc-star" style="text-align:center">五黃廉貞<span class="fx-b" data-s="5"></span></div><div class="nc-row" style="text-align:center">星義：災病凶煞・凶性最烈</div><div style="text-align:center"><span class="nc-mean">樞紐・蟄伏</span></div><div class="nc-qm" style="text-align:center">奇門：天禽</div></td><td><div class="nc-top"><span class="nc-gua">兌</span><span class="nc-sym">☱</span><span class="nc-num">7</span><span class="nc-fam">幼女</span></div><div class="nc-row"><span class="wx wx-j">金</span>先天：坎　身：口</div><div class="nc-star">正西・七赤破軍<span class="fx-b" data-s="7"></span></div><div class="nc-row">星義：口舌・盜劫・刀兵</div><div><span class="nc-mean">打開缺口・兌現收穫</span></div><div class="nc-qm">奇門：天柱・驚門</div></td><td class="zhi">酉雞 17–19</td></tr>
-    <tr><td class="zhi">寅虎 03–05</td><td><div class="nc-top"><span class="nc-gua">艮</span><span class="nc-sym">☶</span><span class="nc-num">8</span><span class="nc-fam">幼男</span></div><div class="nc-row"><span class="wx wx-t">土</span>先天：震　身：手</div><div class="nc-star">東北・八白左輔<span class="fx-b" data-s="8"></span></div><div class="nc-row">星義：財星・田產</div><div><span class="nc-mean">輸送根基・轉換</span></div><div class="nc-qm">奇門：天任・生門</div></td><td><div class="nc-top"><span class="nc-gua">坎</span><span class="nc-sym">☵</span><span class="nc-num">1</span><span class="nc-fam">中男</span></div><div class="nc-row"><span class="wx wx-s">水</span>先天：坤　身：耳</div><div class="nc-star">正北・一白貪狼<span class="fx-b" data-s="1"></span></div><div class="nc-row">星義：官貴・文魁・智慧・桃花</div><div><span class="nc-mean">存儲匯聚・種子</span></div><div class="nc-qm">奇門：天蓬・休門</div></td><td><div class="nc-top"><span class="nc-gua">乾</span><span class="nc-sym">☰</span><span class="nc-num">6</span><span class="nc-fam">父親</span></div><div class="nc-row"><span class="wx wx-j">金</span>先天：艮　身：首</div><div class="nc-star">西北・六白武曲<span class="fx-b" data-s="6"></span></div><div class="nc-row">星義：權威・武貴・驛馬</div><div><span class="nc-mean">資源權柄・決斷</span></div><div class="nc-qm">奇門：天心・開門</div></td><td class="zhi">戌狗 19–21</td></tr>
-    <tr><td class="blank"></td><td class="zhi">丑牛 01–03</td><td class="zhi">子鼠 23–01</td><td class="zhi">亥豬 21–23</td><td class="blank"></td></tr>
-  </table>
-  <figcaption>每格：後天卦・洛書數・家人 → 五行・先天卦・身體 → 玄空九星＋<b>當運旺衰</b>（隨上方運別切換）→ 星義 → 意義關鍵詞 → 奇門星門（備參）；外圈為十二地支生肖時辰</figcaption>
-  </figure></div>
-  <div class="note"><b>怎麼用：</b>①這是九星的「身分證」——每星的性情全部來自它的卦，斷事取象不必背，回這格推即可。②按 ◀▶ 切換一運～九運，各星的旺衰標籤即時更新——「風水輪流轉」的完整版：沒有永遠的吉星，只有得時的星。③其他術數同用此圖：梅花六爻取卦與家人身體、擇時取外圈地支時辰、奇門取星門（另一系統，備參）。<br><b>兩個例外要記：</b>五黃除五運當令外一律作大凶論；一白（官貴）、四綠（文昌）縱在失令之運，其吉義仍可取用（如佈置文昌位）。</div>
-  <h3>三、三元九運——「運」的系統</h3>
+    <p>九星的方位、卦象、五行與當運旺衰，統一放在共同基礎的<a href="#base">九宮萬用對照卡</a>（那張圖是五術共用的底圖，玄空九星是疊在上面的一層）——本章以下的排盤與斷事都以那張圖為準，按 ◀▶ 可切換九運看旺衰。</p>
+<h3>三、三元九運——「運」的系統</h3>
   <table class="tc">
     <tr><th>元</th><th colspan="3">運與年代</th></tr>
     <tr><td>上元</td><td>一運 1864–1883</td><td>二運 1884–1903</td><td>三運 1904–1923</td></tr>
@@ -7857,7 +7859,7 @@ details.yw[open]{padding-bottom:8px}
   <table>
     <tr><th style="width:110px">盤層</th><th>內容</th><th>管什麼</th></tr>
     <tr><td><b>地盤</b></td><td>三奇（乙丙丁）＋六儀（戊己庚辛壬癸）——十天干藏佈九宮</td><td>事的資源與底牌（乙日奇、丙月奇、丁星奇為三張好牌）</td></tr>
-    <tr><td><b>天盤</b></td><td>九星：天蓬・天任・天沖・天輔・天英・天芮・天柱・天心・天禽（見九宮對照卡「奇門」列）</td><td>天時之勢</td></tr>
+    <tr><td><b>天盤</b></td><td>九星：天蓬・天任・天沖・天輔・天英・天芮・天柱・天心・天禽（本位見<a href="#base">共同基礎・九宮萬用對照卡</a>的奇門疊加層）</td><td>天時之勢</td></tr>
     <tr><td><b>人盤</b></td><td>八門：開休生（三吉）、景（次吉）、杜（平）、傷驚死（凶）——本位見下表</td><td>人的行動方式</td></tr>
     <tr><td><b>神盤</b></td><td>八神：值符・螣蛇・太陰・六合・白虎・玄武・九地・九天</td><td>暗中助力阻力</td></tr>
   </table>
@@ -7880,7 +7882,7 @@ details.yw[open]{padding-bottom:8px}
 <p><b>時間引擎：</b>冬至後起<b>陽遁</b>、夏至後起<b>陰遁</b>（與相章日紫白同一條時間線），配一至九局；主流「時家奇門」一個時辰起一盤——同一天十二個時辰十二張盤，選吉就是從中挑出「吉門吉星吉神會於某方」的那個時辰與方向去辦事。</p>
   <h3>三、讀盤邏輯（概念版）</h3>
   <p>起局後依所問之事取「用神」落宮判斷：求財看<b>生門</b>與戊（資本）、文書考試看<b>景門</b>與丁、見貴人看<b>開門</b>與值符、婚戀看<b>六合</b>乙庚……吉門吉星臨用神之宮則事可為，並可反推「此刻往哪個方向辦這件事最有利」。與六爻同樣有「用神」概念（同名近義），與易占互補：易占給義理指引、奇門給時空戰術。</p>
-  <div class="key"><b>與本頁已學系統的四個接口：</b>①底圖同一張——洛書九宮×後天八卦（九宮對照卡「奇門」列即其天盤九星與八門本位）；②陰陽遁與相章「日紫白」同源（冬至夏至分順逆）；③干支引擎與八字共用（十天干的生剋合化直接遷移）；④八門本位是本章自己的靜態底，起局後升級成隨時辰飛動的動態盤。</div>
+  <div class="key"><b>與其他各支的四個接口：</b>①底圖同一張——洛書九宮×後天八卦，見<a href="#base">共同基礎・九宮萬用對照卡</a>，本章的天盤九星與八門本位就是疊在那張底圖上的一層；②陰陽遁與相章「日紫白」同源（冬至夏至分順逆）；③干支引擎與八字共用（十天干的生剋合化直接遷移）；④八門本位是本章自己的靜態底，起局後升級成隨時辰飛動的動態盤。</div>
   <h3>四、奇門排盤器（時家轉盤・拆補法）</h3>
   <div class="card">
     <p style="margin-bottom:8px">
@@ -7932,7 +7934,7 @@ details.yw[open]{padding-bottom:8px}
     <tr><td>食補×醫×命</td><td>八字五行喜忌→臟腑傾向（傳統假說）→五味食養——一張配屬表三支同用</td></tr>
     <tr><td>丹道×醫</td><td>精氣神三寶即中醫精氣學說；周天即經絡；修證以醫理自檢</td></tr>
     <tr><td>房中×醫</td><td>七損八益見於素問；素女經病因治法即醫經格式</td></tr>
-    <tr><td>奇門×洛書×干支</td><td>奇門與玄空同用洛書九宮後天八卦（九宮對照卡即其共同底圖）；陰陽遁與日紫白同一條冬夏至分界；三奇六儀即十天干——八字功底直接遷移</td></tr>
+    <tr><td>奇門×洛書×干支</td><td>奇門與玄空同用洛書九宮後天八卦（<a href="#base">九宮萬用對照卡</a>即其共同底圖）；陰陽遁與日紫白同一條冬夏至分界；三奇六儀即十天干——八字功底直接遷移</td></tr>
     <tr><td>相×命×運</td><td>宅盤由運起、以流年動、以人命配——玄空是命運相的合盤介面</td></tr>
   </table>
   <h3>一事多術示例：「該不該換工作」</h3>
