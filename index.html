@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#100b1a">
 <meta name="apple-mobile-web-app-title" content="五術總本">
 <meta property="og:title" content="五術知識系統｜山・醫・命・相・卜">
-<meta property="og:description" content="山醫命相卜總本：十四經 361 穴定位與口訣、常用穴位速查、玄空飛星與奇門遁甲排盤器。">
+<meta property="og:description" content="山醫命相卜總本：太極拳架、穴位按摩流程、十四經 361 穴、玄空飛星與奇門遁甲排盤器。">
 <meta property="og:type" content="website">
 <title>五術知識系統｜山・醫・命・相・卜</title>
 <style>
@@ -27,33 +27,33 @@ body{
 ::selection{background:rgba(201,162,39,.35)}
 .layout{display:flex; min-height:100vh}
 /* ---------- 側欄 ---------- */
-nav{
+nav#nav{
   width:252px; flex-shrink:0;
   background:linear-gradient(180deg,#120c1d,#1b1129 45%,#120c1d);
   color:#cfc3d8; position:sticky; top:0; height:100vh; overflow-y:auto; padding:18px 0 40px;
   border-right:1px solid var(--gilt-soft);
 }
-nav::-webkit-scrollbar{width:6px} nav::-webkit-scrollbar-thumb{background:#3a2b4a;border-radius:3px}
-nav .brand{padding:12px 20px 18px; border-bottom:1px solid var(--gilt-soft); margin-bottom:10px}
-nav .brand b{
+nav#nav::-webkit-scrollbar{width:6px} nav#nav::-webkit-scrollbar-thumb{background:#3a2b4a;border-radius:3px}
+nav#nav .brand{padding:12px 20px 18px; border-bottom:1px solid var(--gilt-soft); margin-bottom:10px}
+nav#nav .brand b{
   display:block; font-size:21px; letter-spacing:4px;
   font-family:"Songti TC","STSong","Noto Serif TC","PMingLiU",serif;
   background:linear-gradient(180deg,#f4e0a1,#c9a227 70%,#a67f18);
   -webkit-background-clip:text; background-clip:text; color:transparent;
 }
-nav .brand span{font-size:12px; color:#9d8fb3; letter-spacing:3px}
-nav input{
+nav#nav .brand span{font-size:12px; color:#9d8fb3; letter-spacing:3px}
+nav#nav input{
   margin:8px 16px 10px; width:calc(100% - 32px); padding:6px 10px; font-size:13px;
   border:1px solid #46335f; border-radius:6px; background:#231637; color:#eee; outline:none;
 }
-nav input::placeholder{color:#7c6c92}
-nav a{
+nav#nav input::placeholder{color:#7c6c92}
+nav#nav a{
   display:block; padding:7px 20px 7px 24px; color:#b3a6c6; text-decoration:none;
   font-size:13.5px; border-left:3px solid transparent; letter-spacing:.5px;
 }
-nav a:hover{background:#251937; color:#fff}
-nav a.active{border-left-color:#d4af37; color:#f0dfa8; background:#251937}
-nav .grp{padding:14px 20px 4px; font-size:11px; color:#8a7aa5; letter-spacing:4px}
+nav#nav a:hover{background:#251937; color:#fff}
+nav#nav a.active{border-left-color:#d4af37; color:#f0dfa8; background:#251937}
+nav#nav .grp{padding:14px 20px 4px; font-size:11px; color:#8a7aa5; letter-spacing:4px}
 /* ---------- 主內容 ---------- */
 main{flex:1; max-width:1000px; padding:38px 48px 120px; margin:0 auto}
 header.hero{
@@ -167,7 +167,7 @@ footer{color:var(--sub); font-size:13.5px; border-top:1px solid var(--gilt-soft)
 /* ponytail: 手機用原生 <select> 當章節下拉選單，桌機隱藏；不做自製 drawer */
 #navbar{display:none}
 @media (max-width:860px){
-  .layout{display:block} nav{display:none}
+  .layout{display:block} nav#nav{display:none}
   #navbar{
     display:flex; align-items:center; gap:10px;
     position:sticky; top:0; z-index:60;
@@ -274,6 +274,45 @@ details.yw[open]{padding-bottom:8px}
 .fxb-mid{background:#efe9db;color:#7d6c46;border:1px solid #a89a6b}
 .fxb-bad{background:#fdecea;color:#b71c1c;border:1px solid #c62828}
 
+
+/* ---- App 式分頁 ---- */
+main > section{display:none}
+main > section.pg-on{display:block}
+header.hero{display:none}
+header.hero.pg-on{display:block}
+#tabbar{display:none}
+#grpbar{display:none}
+@media (max-width:860px){
+  /* 底部主軸列：一個主軸一頁，像 App 的 tab bar */
+  #tabbar{
+    display:flex; position:fixed; left:0; right:0; bottom:0; z-index:80;
+    background:#150e22; border-top:1px solid var(--gilt-soft);
+    padding-bottom:env(safe-area-inset-bottom,0);
+  }
+  #tabbar button{
+    flex:1; min-width:0; padding:7px 2px 8px; border:0; background:none; cursor:pointer;
+    font-family:inherit; color:#8d7f9e; line-height:1.25;
+    border-top:2px solid transparent; margin-top:-1px;
+  }
+  #tabbar button b{display:block; font-size:19px; font-weight:400;
+    font-family:"Songti TC","Noto Serif TC",serif; letter-spacing:1px}
+  #tabbar button span{display:block; font-size:10px; letter-spacing:1px}
+  #tabbar button.on{color:#f0dfa8; border-top-color:var(--gold)}
+  /* 主軸內若不只一章，頂端出現章節列 */
+  #grpbar{
+    display:flex; gap:6px; overflow-x:auto; position:sticky; top:0; z-index:60;
+    background:#170f24; border-bottom:1px solid var(--gilt-soft); padding:8px 12px;
+    -webkit-overflow-scrolling:touch;
+  }
+  #grpbar::-webkit-scrollbar{display:none}
+  #grpbar button{
+    flex:none; padding:5px 13px; border:1px solid #46335f; border-radius:14px;
+    background:#231637; color:#b3a6c6; font-size:13.5px; font-family:inherit; cursor:pointer;
+  }
+  #grpbar button.on{background:var(--gilt); border-color:var(--gilt); color:#1a1206; font-weight:700}
+  #grpbar.one{display:none}
+  main{padding-bottom:96px !important}
+}
 /* ---- 經絡人與經穴 ---- */
 .mp-wrap{background:#140f1e;border:1px solid var(--line);border-radius:8px;padding:10px;overflow-x:auto}
 .mp-wrap svg{display:block;margin:0 auto;max-width:100%;height:auto}
@@ -316,7 +355,7 @@ details.yw[open]{padding-bottom:8px}
 </head>
 <body>
 <div class="layout">
-<div id="navbar"><span class="navlab">☰ 章節</span><select id="navsel" aria-label="章節目錄"></select></div>
+<div id="grpbar"></div>
 <nav id="nav">
   <div class="brand"><b>五術知識系統</b><span>山・醫・命・相・卜</span></div>
   <input id="filter" type="text" placeholder="篩選章節…">
@@ -328,6 +367,7 @@ details.yw[open]{padding-bottom:8px}
   <a href="#dao">道與丹：經典與功法</a>
   <a href="#sunv">素女房中養生</a>
   <a href="#food">地元食補</a>
+  <a href="#taiji">太極拳架</a>
   <div class="grp">醫</div>
   <a href="#med">中醫經典</a>
   <div class="grp">命</div>
@@ -1435,6 +1475,80 @@ details.yw[open]{padding-bottom:8px}
   <p><b>典籍：</b>《食療本草》（唐．孟詵，現存最早食療專書）、《飲膳正要》（元．忽思慧，四時所宜與食物相反宜忌）、《遵生八箋》（明．高濂，文人生活養生集大成）、<b>《隨息居飲食譜》（清．王士雄）</b>——條理最清晰的性味手冊，建議作常備工具書。</p>
 </section>
 
+<!-- ================= 太極 ================= -->
+<section id="taiji">
+  <h2>山・太極拳架 <small>動功養生：鬆、沉、圓、慢</small></h2>
+  <div class="path"><b>本章脈絡　</b>先認識它在山之中的位置（動功，與導引、丹道同源）→ 分辨五大流派的差別（決定你該學哪一路）→ 身法要領十條（所有流派共用的底）→ 不學套路也能練的基本功 → 每日最小配方 → 現代研究怎麼說 → 怎麼判斷老師與課程。</div>
+
+  <h3>一、它在五術中的位置</h3>
+  <p>太極拳歸<b>山</b>——山是修身，分靜功與動功兩路。<a href="#dao">道與丹</a>那章講的靜坐屬靜功；太極、八段錦、易筋經、五禽戲這些屬<b>動功</b>，古稱<b>導引</b>。兩者不是兩件事：靜功在不動中調息凝神，動功在動作中維持同一種鬆與靜——所以太極常被形容為<b>「動中求靜」</b>。</p>
+  <p>拳架本身就是養生法，這一點常被誤解。太極的技擊源流是真的（陳家溝、綿拳、沾黏連隨），但它能流傳到今天、被幾億人練，靠的是<b>拳架對身體的作用</b>：緩慢、連續、重心不斷轉換、全程微蹲——這剛好是一種低衝擊的閉鏈下肢訓練加平衡訓練，還強迫你把注意力放在身體上。</p>
+
+  <h3>二、五大流派：先分清楚再決定學哪一路</h3>
+  <p>選錯流派是最常見的入門挫折——想養生卻報了要發勁震腳的班，或想練功夫卻學了純保健的簡化套路。</p>
+  <table>
+    <tr><th style="width:64px">流派</th><th>特徵</th><th>誰適合</th></tr>
+    <tr><td><b>陳式</b></td><td>最古老，源出河南陳家溝。<b>快慢相間、有發勁與震腳</b>，纏絲勁明顯，低架時對腿力要求高</td><td>年輕、有運動基礎、想連技擊一起練的人。膝蓋有問題者要謹慎</td></tr>
+    <tr><td><b>楊式</b></td><td>由陳式改編而來，<b>架式舒展、速度均勻、無明顯發勁</b>。流傳最廣</td><td><b>養生取向的首選</b>，也是絕大多數入門班教的路子</td></tr>
+    <tr><td><b>武式</b></td><td>架小緊湊、步法嚴謹，外形變化最少，重內在意念與身法</td><td>喜歡細究道理、不在意外形好不好看的人</td></tr>
+    <tr><td><b>吳式</b></td><td>由楊式小架發展，<b>以柔化見長</b>，動作輕柔緊湊，斜中寓正</td><td>體力較弱、年長、想要最溫和路線的人</td></tr>
+    <tr><td><b>孫式</b></td><td>孫祿堂融形意、八卦與太極為一體，<b>開合鼓盪、進步必跟退步必撤</b>，步法最活</td><td>喜歡步法變化、身體協調性較好的人</td></tr>
+  </table>
+  <div class="key"><b>還有一條實務上的捷徑：</b><b>二十四式簡化太極拳</b>（1956 年整編，以楊式為底）是目前最普及的入門套路，動作只有二十四個、約六分鐘打完，公園晨練與社區班多半教這套。它不是某一流派，是為了普及而做的標準教材——<b>先把它練熟再決定要不要深入某一家</b>，是最省事的路徑。</div>
+
+  <h3>三、身法十要——所有流派共用的底</h3>
+  <p>楊澄甫《太極拳說十要》是最通行的身法總綱。<b>套路可以慢慢學，這十條要一開始就懂</b>——不合這十條的話，招式打得再像也只是比劃。</p>
+  <div class="key" style="font-family:'Songti TC','Noto Serif TC',serif;font-size:16px;color:#e8d9a8;letter-spacing:1px;line-height:2.1">
+  虛靈頂勁　含胸拔背　鬆腰　分虛實<br>沉肩墜肘　用意不用力　上下相隨<br>內外相合　相連不斷　動中求靜</div>
+  <table>
+    <tr><th style="width:96px">要領</th><th>白話</th></tr>
+    <tr><td><b>虛靈頂勁</b></td><td>頭頂像被一條線輕輕提著，下巴微收。不是仰頭，是把頸椎拉長</td></tr>
+    <tr><td><b>含胸拔背</b></td><td>胸口不挺出、背部自然舒展。不是駝背，是胸腔放鬆讓呼吸沉下去</td></tr>
+    <tr><td><b>鬆腰</b></td><td>腰胯放鬆，重心才落得下去。腰一僵，下盤就浮</td></tr>
+    <tr><td><b>分虛實</b></td><td>隨時清楚哪隻腳承重、哪隻腳空。雙腳平均受力（雙重）是最常見的毛病</td></tr>
+    <tr><td><b>沉肩墜肘</b></td><td>肩膀不聳、手肘不揚。肩一聳，力就斷在肩上</td></tr>
+    <tr><td><b>用意不用力</b></td><td>動作由意念引導、肌肉維持最低張力。這是太極與一般體操最大的差別</td></tr>
+    <tr><td><b>上下相隨</b></td><td>腳、腰、手同時到位，不是手先動腳再跟</td></tr>
+    <tr><td><b>內外相合</b></td><td>呼吸、意念與外形動作同步，開為呼、合為吸</td></tr>
+    <tr><td><b>相連不斷</b></td><td>整套沒有停頓與斷點，像抽絲一樣連續</td></tr>
+    <tr><td><b>動中求靜</b></td><td>身體在動，注意力保持安定——與靜坐是同一件事的兩種形式</td></tr>
+  </table>
+
+  <h3>四、不學套路也能練的基本功</h3>
+  <p>套路必須有人帶（動作細節靠文字學不來，錯了還傷膝蓋）。但<b>基本功可以自己先練</b>，而且養生效果的大半來自這裡，不是套路本身。</p>
+  <table>
+    <tr><th style="width:88px">項目</th><th>怎麼做</th><th>要點</th></tr>
+    <tr><td><b>無極樁</b></td><td>雙腳與肩同寬平行站，膝微屈不超過腳尖，尾閭下沉，雙手自然垂放。閉眼或半閉，自然呼吸。從 3 分鐘開始，逐週加到 10 分鐘</td><td>不追求腿痠。痠到發抖表示架子太低，把膝蓋抬高一點</td></tr>
+    <tr><td><b>混元樁</b></td><td>在無極樁基礎上雙手於胸前抱圓，如抱一顆大球，腋下留空</td><td>肩要沉、肘要墜，手抬到痠就放下休息</td></tr>
+    <tr><td><b>重心轉換</b></td><td>雙腳與肩同寬，重心緩慢由左移到右再移回，全程 8 秒一趟，做 20 趟</td><td>這是「分虛實」的單練。做熟了套路的下盤才穩</td></tr>
+    <tr><td><b>鬆肩沉肘</b></td><td>雙手緩慢平舉到肩高再放下，全程想著「肘往下墜」而不是「手往上抬」</td><td>體會「用意不用力」最直接的一個動作</td></tr>
+    <tr><td><b>逆腹式呼吸</b></td><td>吸氣時小腹微收、呼氣時小腹放鬆外凸。先從坐姿練，順了再帶進站樁</td><td><b>不要憋氣、不要刻意拉長</b>。呼吸練法出偏最常見的原因就是勉強</td></tr>
+  </table>
+  <div class="key"><b>每日最小配方（15 分鐘）：</b>無極樁 5 分 → 重心轉換 20 趟 → 鬆肩沉肘 10 次 → 若已學套路，慢打一遍二十四式（約 6 分）。<b>每天做比一週做一次久有效得多</b>——這一點與靜坐日課的道理相同。</div>
+  <div class="note"><b>膝蓋是太極最常見的傷處。</b>原因幾乎都是同兩個：<b>架式蹲得太低</b>、以及<b>膝蓋超過腳尖或膝與腳尖方向不一致</b>（轉身時腳沒跟著轉，膝蓋被扭）。原則：膝蓋永遠對著腳尖的方向，架高一點沒關係，寧可高也不要扭。練完膝蓋痛就是架子有問題，不是「還沒練開」。</div>
+
+  <h3>五、【現代研究怎麼說】</h3>
+  <div class="modern"><b>【現代調整】</b>太極是傳統養生法裡<b>現代證據相對紮實</b>的一項，值得跟其他項目分開看待。
+  <br><br><b>平衡與跌倒預防：</b>2025 年一份統合 21 項隨機對照試驗、2,408 位 60 歲以上健康長者的統合分析顯示，單腳站立時間平均增加約 5.9 秒、起立行走測試（TUG）縮短約 0.66 秒、功能性伸展距離增加約 7.4 公分，對跌倒恐懼也有明確改善。多數指標評為<b>中等品質證據</b>，研究間異質性偏高（I² 68–99%）。
+  <br><br><b>血壓與血脂：</b>另一份統合 17 項隨機對照試驗、2,186 位原發性高血壓患者的分析顯示，收縮壓平均下降約 9.1 mmHg、舒張壓約 5.4 mmHg，總膽固醇、三酸甘油酯與低密度脂蛋白也有下降；高密度脂蛋白與 BMI 則無顯著變化。限制是異質性高（I² &gt; 80%）、納入研究全部來自中國、且部分研究的隨機化程序未公開。
+  <br><br><b>怎麼解讀：</b>證據支持的是「太極作為一種規律的低衝擊運動，對平衡、下肢功能與心血管指標有幫助」，這部分可以放心當作事實。<b>不能</b>由此推論「氣的傳統理論因此被證實」，也不能推論太極可以取代降血壓藥或其他治療——上述研究多為輔助介入，且高血壓已在用藥者請勿自行停藥。<b>技擊效力、隔空發勁一類的說法，不在任何一份上述證據的支持範圍內。</b></div>
+
+  <h3>六、怎麼判斷老師與課程</h3>
+  <p>太極沒有統一的認證制度，教學品質差異極大——同一個地區可能有練了三十年不收錢的公園老師，也有把套路教成才藝表演的商業班。以下是判斷依據，適用於任何老師與任何課程。</p>
+  <table>
+    <tr><th style="width:104px">看什麼</th><th>好的樣子 / 該留心的樣子</th></tr>
+    <tr><td><b>怎麼談「氣」</b></td><td><b>好：</b>能用重心、結構、放鬆、呼吸這些可觀察的東西解釋動作，「氣感」是結果不是解釋。<br><b>留心：</b>所有現象都歸給氣，而且無法拆解成任何具體的身體操作</td></tr>
+    <tr><td><b>健康宣稱</b></td><td><b>好：</b>說得清楚太極能幫到什麼（平衡、下肢肌力、放鬆、規律運動），也承認幫不到什麼。<br><b>留心：</b>宣稱能治病、能取代就醫、能停藥、隔空發人——見到就跳過，不必再考慮其他優點</td></tr>
+    <tr><td><b>教不教基本功</b></td><td><b>好：</b>從站樁、重心轉換、身法要領開始，第一堂就在講鬆與沉。<br><b>留心：</b>直接教套路排場，從不談重心與放鬆——學完只是把動作記起來</td></tr>
+    <tr><td><b>會不會糾正</b></td><td><b>好：</b>會走到你旁邊調整姿勢，會指出你哪裡僵、哪裡雙重。<br><b>留心：</b>大班只在前面示範、全程沒有個別糾正——那本質上是跟著影片自學</td></tr>
+    <tr><td><b>問不問你的身體</b></td><td><b>好：</b>開始前會問膝蓋、腰、舊傷、血壓，並據此調整架高。<br><b>留心：</b>不問，一律要求蹲低——膝蓋受傷最常見的來源</td></tr>
+    <tr><td><b>師承與資歷</b></td><td>師承可查證是加分，但<b>不是保證</b>——名門弟子教得爛的很多，公園老師教得好的也很多。真正的判準是他教出來的學生動起來像不像樣</td></tr>
+    <tr><td><b>收費方式</b></td><td><b>好：</b>可單堂或短期試上、費用透明、能中途退出。<br><b>留心：</b>一次收長期大額、限時優惠催促、要你拉人加入、強調「名額只剩幾個」——這些是銷售手法，與教學品質無關</td></tr>
+  </table>
+  <div class="key"><b>最實際的一條建議：</b>買長期課程之前，先去公園晨練隊或社區大學的低價班<b>練滿三個月</b>。三個月足夠讓你確認兩件事：你是不是真的會持續練，以及你適不適應這個流派。太極的門檻不在學費，在<b>每天願不願意站那十五分鐘</b>——先驗證這件事，再花錢。線上課程也同理，先找免費影片跟著練一段時間，確認你不會買了就放著。</div>
+  <div class="note"><b>關於特定老師或課程：</b>本頁不對任何具體的老師、教室或課程做推薦或評價——一來我沒有可靠依據，二來教學適配性因人而異。上表的用途是讓你自己去看、自己去判斷；真的要決定，最好的方法永遠是<b>去試上一堂，看他怎麼教、怎麼糾正你</b>。</div>
+</section>
+
 <!-- ================= 醫 ================= -->
 <section id="med">
   <h2>醫・中醫經典 <small>六部經典各司其職・每段原文→白話→出處</small></h2>
@@ -1453,10 +1567,23 @@ details.yw[open]{padding-bottom:8px}
   <h3>實用篇・常用穴位速查（放鬆保健用）</h3>
   <div class="note"><b>先講清楚這一節是什麼、不是什麼。</b>它是<b>自我放鬆的按摩指引</b>——按對位置能鬆開緊繃的肌肉、緩和疲勞感與不適感，這是按摩本身就會有的效果。它<b>不是治療</b>，不能取代診斷、用藥或任何醫療處置。任何症狀持續超過幾天、逐漸加重、突然發作，或伴隨發燒、劇痛、麻木無力、意識改變——第一件事是就醫，不是按穴道。</div>
   <div class="key"><b>怎麼量「寸」：</b>中醫的寸是<b>你自己的身體比例</b>，不是尺上的長度，所以用自己的手量自己的身體。<b>一寸</b>＝拇指指節最寬處；<b>二寸</b>＝食指＋中指併攏的寬度；<b>三寸</b>＝食指到小指四指併攏的寬度。<br>
-  <b>通用按法：</b>拇指或食指指腹垂直下壓，力道到<b>「痠脹但還舒服」</b>為止——會痛就是太用力了。每個點按揉一分鐘上下，一天二至三次；左右成對的穴位兩邊都做。按完喝點溫水。</div>
+  </div>
+  <h4>手法：力道、節奏、順序</h4>
+  <p>同一個穴位，手法對不對的差別比按不按還大。以下六件事是所有情境共用的。</p>
+  <table>
+    <tr><th style="width:84px">項目</th><th>做法</th></tr>
+    <tr><td><b>用哪裡按</b></td><td>拇指<b>指腹</b>——不是指尖、更不是指甲（會刮傷皮膚且力量散掉）。拇指按到痠就換食指疊中指按，或用彎曲的食指第二指節；腿與臀等大面積可用掌根。</td></tr>
+    <tr><td><b>力道</b></td><td>以 0 到 10 分計，<b>目標 4 到 6 分</b>：痠、脹、微微發熱，但還能正常呼吸與講話。到 7 分以上身體會反射性繃緊，肌肉反而更硬——用力不等於有效。</td></tr>
+    <tr><td><b>找對了沒</b></td><td>按到對的位置會有<b>痠脹感，而且往周邊擴散</b>；如果只是皮膚表面刺痛，表示位置偏了或力道壓在皮膚而非深層。移動半指幅再試，找那個「特別痠」的點。</td></tr>
+    <tr><td><b>節奏</b></td><td>兩種基本手法。<b>點按</b>：垂直下壓停 3 秒、放鬆 1 秒，重複。<b>揉法</b>：指腹貼住皮膚<b>帶著皮下組織畫小圈</b>，不要在皮膚表面摩擦（會破皮發紅）。</td></tr>
+    <tr><td><b>配合呼吸</b></td><td><b>吐氣時加壓、吸氣時稍放鬆</b>。跟著呼吸走比死壓有效很多，緊繃的肌肉是在吐氣時才鬆得開。</td></tr>
+    <tr><td><b>時間與次數</b></td><td>單穴 1 分鐘上下，整套 5 到 10 分鐘，一天 2 到 3 次。<b>同一處連續按超過 3 分鐘容易挫傷</b>；隔天仍然痛表示上次太重。</td></tr>
+  </table>
+  <div class="key"><b>順序原則（最容易被忽略的一項）：</b>冷的、緊的肌肉直接重壓最容易受傷。正確順序是<b>先熱敷或大面積揉開 → 再點按單穴 → 最後活動關節收尾</b>。所以下面每個情境給的都是<b>一整套流程</b>，不是叫你挑一個穴猛按。按完喝溫水，一小時內不要冰敷或吹冷風。</div>
   <div class="card">
-    <p style="margin-bottom:10px"><b>你現在想舒緩什麼？</b></p>
+    <p style="margin-bottom:10px"><b>你現在想舒緩什麼？</b>選一個情境會給你整套順序。</p>
     <div id="ac-chips" style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px"></div>
+    <div id="ac-flow"></div>
     <div id="ac-out"></div>
   </div>
   <div class="note"><b>什麼情況先不要按：</b>皮膚有傷口、發炎、疹子、曬傷或剛動過刀的部位；正在發燒或急性感染；剛吃飽（腹部穴位等飯後一小時）；喝了酒。<b>先問過醫師再按：</b>懷孕、服用抗凝血劑或有凝血疾病、癲癇、癌症治療中、裝有心律調節器、糖尿病末梢感覺遲鈍、肢體水腫或有淋巴水腫風險。<b>按到劇痛、頭暈、心悸就立刻停下來。</b></div>
@@ -8076,6 +8203,7 @@ details.yw[open]{padding-bottom:8px}
 
 </main>
 </div>
+<nav id="tabbar"></nav>
 <script>
 (function(){
   var links=[].slice.call(document.querySelectorAll('nav a'));
@@ -8083,7 +8211,7 @@ details.yw[open]{padding-bottom:8px}
 
   // 手機版下拉選單：直接由左側欄的分組與連結生成，不重複維護一份目錄
   var sel=document.getElementById('navsel'), grp=null;
-  [].slice.call(document.getElementById('nav').children).forEach(function(el){
+  if(sel) [].slice.call(document.getElementById('nav').children).forEach(function(el){
     if(el.classList.contains('grp')){
       grp=document.createElement('optgroup'); grp.label=el.textContent; sel.appendChild(grp);
     }else if(el.tagName==='A'){
@@ -8092,17 +8220,17 @@ details.yw[open]{padding-bottom:8px}
       (grp||sel).appendChild(o);
     }
   });
-  sel.addEventListener('change',function(){ location.hash=sel.value; });
+  if(sel) sel.addEventListener('change',function(){ location.hash=sel.value; });
 
   function onScroll(){
     var idx=0;
     for(var i=0;i<secs.length;i++){ if(secs[i]&&secs[i].getBoundingClientRect().top<130) idx=i; }
     links.forEach(function(a,i){ a.classList.toggle('active',i===idx); });
-    if(links[idx]) sel.value=links[idx].getAttribute('href');   // 捲動時下拉框跟著顯示目前章節
+    if(sel && links[idx]) sel.value=links[idx].getAttribute('href');   // 捲動時下拉框跟著顯示目前章節
   }
   document.addEventListener('scroll',onScroll,{passive:true}); onScroll();
   var f=document.getElementById('filter');
-  f.addEventListener('input',function(){
+  if(f) f.addEventListener('input',function(){
     var q=f.value.trim();
     links.forEach(function(a){ a.style.display=(!q||a.textContent.indexOf(q)>-1)?'':'none'; });
   });
@@ -8851,6 +8979,67 @@ var MP_PT=[["LU",1,"中府","LU1","胸前壁外上方，前正中線旁開6寸�
   ];
   var groups=[]; P.forEach(function(p){ if(groups.indexOf(p[0])<0) groups.push(p[0]); });
   var chips=document.getElementById('ac-chips'), out=document.getElementById('ac-out'), cur='全部';
+  var FLOW={
+  '肩頸僵硬':['5–8 分鐘。久坐族每工作一小時做一次比一次做很久有效。',[
+    '熱敷或用熱水沖後頸 3 分鐘——肌肉軟了再按，硬壓緊繃的肌肉只會更緊',
+    '手掌貼住肩頸兩側大面積揉開 30 秒，由上往下',
+    '<b>風池</b>：兩拇指抵住凹窩，朝鼻尖方向按揉 1 分鐘，同時緩慢點頭',
+    '<b>天柱</b>：指腹按揉 1 分鐘，配合慢速左右轉頭',
+    '<b>肩井</b>：用對側手掌抓住肩膀捏提 20 下，兩邊各做',
+    '<b>後谿</b>：拇指按 1 分鐘，邊按邊轉頸——遠端取穴，讓頸部在放鬆狀態下活動',
+    '收尾：頸部緩慢畫圈各 5 圈，喝溫水']],
+  '頭脹・眼睛累':['4–5 分鐘。用眼每 40 分鐘做一次。',[
+    '雙手搓熱，掌心虛捂雙眼 30 秒——<b>不壓眼球</b>，只用溫度',
+    '<b>攢竹</b>：拇指由下往上頂住眉頭凹陷，停 10 秒放開，做 5 次',
+    '<b>睛明</b>：食指拇指輕捏 10 秒，做 3 次。此處力道要比別處輕很多，務必先洗手',
+    '<b>太陽</b>：指腹輕畫圈 1 分鐘，骨薄不可重壓',
+    '<b>百會</b>：指腹輕拍 30 下',
+    '<b>合谷</b>：拇指按揉 1 分鐘，兩手都做',
+    '收尾：閉眼，睜開後看遠處 20 秒']],
+  '睡不好・心煩':['睡前 8 分鐘。做完就躺下，不要再看螢幕。',[
+    '溫水泡腳 10 分鐘（水溫 40℃ 上下，淹過腳踝）',
+    '<b>湧泉</b>：拇指搓按到腳心發熱，每腳 2 分鐘',
+    '<b>神門</b>：躺著做，拇指按揉 1 分鐘，兩手',
+    '<b>內關</b>：按揉 1 分鐘，配合 4 秒吸、6 秒吐的呼吸',
+    '<b>安眠</b>：指腹輕揉 1 分鐘',
+    '<b>印堂</b>：由下往上輕推 20 次，速度放慢',
+    '收尾：維持慢呼吸，不再起身']],
+  '腸胃脹・沒食慾':['5 分鐘，<b>飯後一小時內不要做</b>。',[
+    '掌心搓熱，以肚臍為中心<b>順時針</b>揉腹 2 分鐘，由小圈慢慢畫到大圈',
+    '<b>中脘</b>：掌根順時針揉 1 分鐘',
+    '<b>天樞</b>：雙手指腹同時按揉 1 分鐘',
+    '<b>足三里</b>：拇指按揉 1–2 分鐘，兩腳都做',
+    '噁心想吐時加做<b>內關</b> 1 分鐘']],
+  '情緒緊・胸悶':['3–5 分鐘。隨時可做，坐著就行。',[
+    '先做 5 次深呼吸：4 秒吸、6 秒吐，把注意力放在吐氣',
+    '<b>膻中</b>：指腹由上往下順推 1 分鐘，每次推都配合吐氣',
+    '<b>內關</b>：按揉 1 分鐘，兩手',
+    '<b>太衝</b>：朝腳踝方向推按 1 分鐘，兩腳。這裡通常最痠，力道放輕',
+    '<b>合谷</b>：與太衝合稱「開四關」，兩者一起按是傳統最常用的組合',
+    '收尾：肩膀上提吸氣、放下吐氣，做 5 次']],
+  '手腳冰冷・疲倦':['晚上 8 分鐘。溫度比力道重要，熱敷那幾步不要跳。',[
+    '泡腳 10 分鐘，水溫 40℃ 上下、淹過腳踝',
+    '<b>湧泉</b>：拇指搓按每腳 2 分鐘，搓到發熱',
+    '<b>三陰交</b>：按揉 1 分鐘，兩腳',
+    '<b>足三里</b>：按揉 1–2 分鐘，兩腳',
+    '<b>關元</b>：掌心搓熱後覆蓋輕揉 2 分鐘，或用暖暖包熱敷 10 分鐘',
+    '收尾：穿襪保暖，做完不要馬上吹到風']],
+  '經期不適':['經前與經期都可做。<b>量多的頭一兩天不要重壓下腹</b>，以熱敷為主。',[
+    '熱敷下腹 10 分鐘——這一步的效果通常比按穴明顯，不要跳過',
+    '<b>關元</b>：熱敷後掌心輕揉 2 分鐘，力道要輕',
+    '<b>血海</b>：拇指按揉 1 分鐘，兩腳',
+    '<b>三陰交</b>：按揉 1 分鐘，兩腳',
+    '情緒起伏或脹痛時加做<b>太衝</b> 1 分鐘',
+    '提醒：痛到影響作息、或痛法與以往明顯不同，請就醫檢查而不是繼續按']],
+  '鼻塞・換季':['2–3 分鐘，一天可做多次。',[
+    '雙手搓熱，掌心虛捂口鼻 30 秒',
+    '<b>迎香</b>：食指指腹上下搓揉鼻翼兩側，到局部發熱，約 1 分鐘',
+    '<b>印堂</b>：由下往上推 20 次',
+    '<b>風池</b>：拇指按揉 1 分鐘',
+    '<b>合谷</b>：按揉 1 分鐘，兩手']]
+  };
+  var flowBox=document.getElementById('ac-flow');
+
   var gd=document.getElementById('ac-dots'), info=document.getElementById('ac-info'), NS='http://www.w3.org/2000/svg';
 
   // 從經絡人資料取這些穴的座標，畫在簡圖上（同一份座標，不另外維護）
@@ -8893,6 +9082,12 @@ var MP_PT=[["LU",1,"中府","LU1","胸前壁外上方，前正中線旁開6寸�
       h+='<tr><td><b>'+p[1]+'</b><br><small style="color:var(--dim)">'+p[2]+'</small></td><td>'+p[3]+'</td><td>'+p[4]+'</td><td>'+(p[5]||'—')+'</td></tr>';
     });
     out.innerHTML=h+'</table>';
+    if(flowBox){
+      var f=FLOW[cur];
+      flowBox.innerHTML = f ? ('<div class="key" style="margin-bottom:12px"><b>整套流程・'+cur+'</b>　'+f[0]+
+        '<ol style="margin:8px 0 0 18px">'+f[1].map(function(s){return '<li style="margin:4px 0">'+s+'</li>'}).join('')+'</ol></div>')
+        : '<p><small>選一個情境會給你完整的操作順序（熱敷、揉開、點按、收尾）。下表為全部穴位。</small></p>';
+    }
     [].forEach.call(chips.children,function(b){ b.classList.toggle('on', b.textContent==cur); });
     if(gd){ var live={}; rows.forEach(function(p){ live[p[1]]=1; });
       [].forEach.call(gd.children,function(g){ g.classList.toggle('on', !!live[g.dataset.nm]); }); }
@@ -8903,6 +9098,74 @@ var MP_PT=[["LU",1,"中府","LU1","胸前壁外上方，前正中線旁開6寸�
     chips.appendChild(b);
   });
   render();
+})();
+</script>
+
+<script>
+/* App 式分頁：一個主軸一頁，章節間切換不捲動整份文件 */
+(function(){
+  var GROUPS=[
+    {k:'綱', sub:'總綱', pages:['intro','map','base','syn']},
+    {k:'山', sub:'修身', pages:['dao','sunv','food','taiji']},
+    {k:'醫', sub:'醫理', pages:['med']},
+    {k:'命', sub:'論命', pages:['bazi','ziwei']},
+    {k:'相', sub:'觀相', pages:['fs']},
+    {k:'卜', sub:'決疑', pages:['yi','qimen']}
+  ];
+  var TITLE={}, OF={};
+  [].slice.call(document.querySelectorAll('nav#nav a')).forEach(function(a){
+    TITLE[a.getAttribute('href').slice(1)]=a.textContent.trim();
+  });
+  GROUPS.forEach(function(g){ g.pages.forEach(function(p){ OF[p]=g; }); });
+
+  var hero=document.querySelector('header.hero'),
+      tab=document.getElementById('tabbar'), grp=document.getElementById('grpbar'),
+      cur=null;
+
+  GROUPS.forEach(function(g){
+    var b=document.createElement('button');
+    b.innerHTML='<b>'+g.k+'</b><span>'+g.sub+'</span>';
+    b.addEventListener('click',function(){ go(g.pages[0]); });
+    g.btn=b; tab.appendChild(b);
+  });
+
+  function go(id, push){
+    if(!OF[id]) id='intro';
+    var g=OF[id];
+    document.querySelectorAll('main > section').forEach(function(s){
+      s.classList.toggle('pg-on', s.id===id);
+    });
+    if(hero) hero.classList.toggle('pg-on', id==='intro');
+    GROUPS.forEach(function(x){ x.btn.classList.toggle('on', x===g); });
+    // 主軸內的章節列
+    grp.innerHTML='';
+    g.pages.forEach(function(p){
+      var b=document.createElement('button'); b.textContent=TITLE[p]||p;
+      b.classList.toggle('on', p===id);
+      b.addEventListener('click',function(){ go(p, true); });
+      grp.appendChild(b);
+    });
+    grp.classList.toggle('one', g.pages.length<2);
+    document.querySelectorAll('nav#nav a').forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('href')==='#'+id);
+    });
+    cur=id;
+    if(push && location.hash!=='#'+id) history.replaceState(null,'','#'+id);
+    window.scrollTo(0,0);
+  }
+
+  // 站內連結一律走路由，不做長捲動
+  document.addEventListener('click',function(e){
+    var a=e.target.closest && e.target.closest('a[href^="#"]');
+    if(!a) return;
+    var id=a.getAttribute('href').slice(1);
+    if(!OF[id]) return;
+    e.preventDefault(); go(id, true);
+  });
+  window.addEventListener('hashchange',function(){ go(location.hash.slice(1)); });
+
+  go(location.hash.slice(1)||'intro');
+  window.__goPage=go;
 })();
 </script>
 </body>
