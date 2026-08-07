@@ -314,6 +314,33 @@ header.hero.pg-on{display:block}
   main{padding-bottom:96px !important}
 }
 
+
+
+/* 章內目錄與回頂 */
+#toc,.toc-box{margin:0 0 18px}
+#toc summary,.toc-box>summary{cursor:pointer;color:#e6c869;font-weight:700;letter-spacing:1px}
+#toc ol,.toc-box ol{margin:10px 0 0 20px;columns:2;column-gap:22px}
+#toc li,.toc-box li{margin:3px 0;break-inside:avoid}
+#toc a,.toc-box a{color:#b3a6c6;text-decoration:none;font-size:14px}
+#toc a:hover,.toc-box a:hover{color:#f0dfa8;text-decoration:underline}
+#top{position:fixed;right:14px;bottom:70px;z-index:70;display:none;
+  width:42px;height:42px;border-radius:50%;border:1px solid var(--gilt-soft);
+  background:rgba(30,21,48,.92);color:var(--gold);font-size:17px;cursor:pointer;line-height:1}
+#top.show{display:block}
+main h3{scroll-margin-top:96px}
+@media (min-width:861px){ .toc-box ol{columns:3} #top{bottom:24px} }
+@media (max-width:860px){ .toc-box ol{columns:1} }
+/* 摺疊區內的長表格自己捲，不要把頁面拉長 */
+details .tbl-scroll{max-height:60vh;overflow-y:auto}
+/* 摺疊區展開時，標題黏在頂端——捲到哪裡都關得掉 */
+details[open] > summary{
+  position:sticky; top:0; z-index:6; background:#1b1231;
+  margin:-13px -20px 8px; padding:13px 20px;
+  border-bottom:1px solid var(--gilt-soft); border-radius:6px 6px 0 0;
+}
+details.yw[open] > summary{background:#181022; margin:-11px -18px 8px; padding:11px 18px}
+details[open] > summary::after{content:'　▲ 收合'; font-size:12px; color:var(--dim); font-weight:400}
+@media (max-width:860px){ details[open] > summary{top:44px} }
 /* ---- 穴位測驗 ---- */
 #qz-opts button{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 14px;
   border:1px solid #46335f;border-radius:7px;background:#231637;color:#e6ddc8;
@@ -1594,7 +1621,7 @@ header.hero.pg-on{display:block}
   </table>
   <div class="key"><b>順序原則（最容易被忽略的一項）：</b>冷的、緊的肌肉直接重壓最容易受傷。正確順序是<b>先熱敷或大面積揉開 → 再點按單穴 → 最後活動關節收尾</b>。所以下面每個情境給的都是<b>一整套流程</b>，不是叫你挑一個穴猛按。按完喝溫水，一小時內不要冰敷或吹冷風。</div>
   <div class="card">
-    <p style="margin-bottom:10px"><b>你現在想舒緩什麼？</b>選一個情境會給你整套順序。</p>
+    <p style="margin-bottom:10px"><b>你現在想舒緩什麼？</b>點一個情境，才會展開那一套的順序與穴位；再點一次收起來。</p>
     <div id="ac-chips" style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px"></div>
     <div id="ac-flow"></div>
     <div id="ac-out"></div>
@@ -1607,6 +1634,15 @@ header.hero.pg-on{display:block}
   <b>陰陽分佈也有規律：</b>陰經走<b>內側</b>（手臂內面、腿內面、腹面），陽經走<b>外側與背面</b>。所以摸到骨頭外緣多半是陽經，摸到肌肉柔軟的內面多半是陰經。<br>
   <b>另加兩條不成對的：</b>任脈走身體<b>前正中線</b>（總管一身之陰）、督脈走<b>後正中線</b>（總管一身之陽）。十二經＋任督＝十四經，共 361 個經穴。</div>
   <p><b>流注次序</b>是十二經首尾相接的順序，每兩小時輪值一經，一天十二時辰剛好走完一輪：肺 → 大腸 → 胃 → 脾 → 心 → 小腸 → 膀胱 → 腎 → 心包 → 三焦 → 膽 → 肝，再回到肺。</p>
+  <div class="key"><b>經穴圖要看哪裡：</b>本頁不自製人體經穴圖——那種圖要能用，靠的是寫實的解剖繪圖與海報級的尺寸，這兩點在手機網頁上做不到，硬做出來的示意圖只會誤導定位。<b>本頁負責的是文字定位、分經全表、口訣與測驗</b>；要看圖請搭配下列現成資源，都是教學現場在用的。</div>
+  <table>
+    <tr><th style="width:118px">資源</th><th>特點</th></tr>
+    <tr><td><b>針灸學－新編彩圖</b></td><td>國家中醫藥研究所的免費 PDF，教材等級，彩色照片標穴＋現代與仿古穴位圖各一套，採 WHO 標準定位</td></tr>
+    <tr><td><b>針灸圖集</b><br><small style="color:var(--dim)">acupun.site</small></td><td>數位典藏計畫。一經一圖，另有手、足、頭面、胸腹、耳、眼的分部圖與前側後三視角，還有 3D 虛擬銅人可以轉著看</td></tr>
+    <tr><td><b>A+醫學百科<br>經穴穴位圖</b></td><td>查單一穴位最快，圖文並列</td></tr>
+    <tr><td><b>實體掛圖／銅人</b></td><td>教學現場的標準配備。掛圖是海報尺寸所以看得清楚，銅人可以摸、可以繞著看，這兩點螢幕都取代不了</td></tr>
+  </table>
+  <p><small>連結未內嵌於本頁，請自行搜尋上述名稱——外部網站的網址與授權狀態會變動，內嵌反而容易失效或誤導。</small></p>
   <h4>十四經與 361 穴</h4>
   <p>選一條經，下方全表就只留該經的穴位，依循行順序排列。定位一律以<b>骨度分寸</b>與體表標誌描述——量法見上方實用篇，那是實際取穴的依據。</p>
   <div class="card">
@@ -8255,6 +8291,7 @@ header.hero.pg-on{display:block}
 </main>
 </div>
 <nav id="tabbar"></nav>
+<button id="top" title="回到頂端">▲</button>
 <script>
 (function(){
   var links=[].slice.call(document.querySelectorAll('nav a'));
@@ -9029,7 +9066,7 @@ var MP_PT=[["LU",1,"中府","LU1","胸前壁外上方，前正中線旁開6寸�
   ['鼻塞・換季','合谷','LI4','手背虎口，拇指與食指骨頭交會前的肌肉隆起處','拇指按揉 1 分鐘','孕期避開']
   ];
   var groups=[]; P.forEach(function(p){ if(groups.indexOf(p[0])<0) groups.push(p[0]); });
-  var chips=document.getElementById('ac-chips'), out=document.getElementById('ac-out'), cur='全部';
+  var chips=document.getElementById('ac-chips'), out=document.getElementById('ac-out'), cur='';
   var FLOW={
   '肩頸僵硬':['5–8 分鐘。久坐族每工作一小時做一次比一次做很久有效。',[
     '熱敷或用熱水沖後頸 3 分鐘——肌肉軟了再按，硬壓緊繃的肌肉只會更緊',
@@ -9126,7 +9163,13 @@ var MP_PT=[["LU",1,"中府","LU1","胸前壁外上方，前正中線旁開6寸�
   }
 
   function render(){
-    var rows=P.filter(function(p){ return cur=='全部'||p[0]==cur; });
+    if(!cur){                       // 預設：只給選項，不攤開任何內容
+      out.innerHTML='';
+      if(flowBox) flowBox.innerHTML='';
+      [].forEach.call(chips.children,function(b){ b.classList.remove('on'); });
+      return;
+    }
+    var rows=P.filter(function(p){ return cur=='全部穴位一覽'||p[0]==cur; });
     var h='<table><tr><th style="width:96px">穴位</th><th>怎麼找</th><th>怎麼按</th><th>注意</th></tr>';
     var last='';
     rows.forEach(function(p){
@@ -9138,15 +9181,15 @@ var MP_PT=[["LU",1,"中府","LU1","胸前壁外上方，前正中線旁開6寸�
       var f=FLOW[cur];
       flowBox.innerHTML = f ? ('<div class="key" style="margin-bottom:12px"><b>整套流程・'+cur+'</b>　'+f[0]+
         '<ol style="margin:8px 0 0 18px">'+f[1].map(function(s){return '<li style="margin:4px 0">'+s+'</li>'}).join('')+'</ol></div>')
-        : '<p><small>選一個情境會給你完整的操作順序（熱敷、揉開、點按、收尾）。下表為全部穴位。</small></p>';
+        : '';
     }
     [].forEach.call(chips.children,function(b){ b.classList.toggle('on', b.textContent==cur); });
     if(gd){ var live={}; rows.forEach(function(p){ live[p[1]]=1; });
       [].forEach.call(gd.children,function(g){ g.classList.toggle('on', !!live[g.dataset.nm]); }); }
   }
-  ['全部'].concat(groups).forEach(function(g){
+  groups.concat(['全部穴位一覽']).forEach(function(g){
     var b=document.createElement('button'); b.className='fx-btn'; b.textContent=g;
-    b.addEventListener('click',function(){ cur=g; render(); });
+    b.addEventListener('click',function(){ cur=(cur===g?'':g); render(); });
     chips.appendChild(b);
   });
   render();
@@ -9353,6 +9396,65 @@ var MP_PT=[["LU",1,"中府","LU1","胸前壁外上方，前正中線旁開6寸�
     document.getElementById('qz-again').addEventListener('click',start);
   }
   go.addEventListener('click',start);
+})();
+</script>
+
+<script>
+/* 摺疊區手風琴：同一個父容器內一次只展開一個，避免頁面越拉越長 */
+(function(){
+  document.addEventListener('toggle', function(e){
+    var d=e.target;
+    if(d.tagName!=='DETAILS' || !d.open) return;
+    [].forEach.call(d.parentNode.children, function(s){
+      if(s!==d && s.tagName==='DETAILS' && s.open) s.open=false;
+    });
+  }, true);
+})();
+</script>
+
+<script>
+/* 章內目錄（依當前頁的 h3 自動生成）＋ 回到頂端 */
+(function(){
+  var top=document.getElementById('top');
+  function build(){
+    var sec=[].slice.call(document.querySelectorAll('main > section'))
+             .filter(function(s){ return getComputedStyle(s).display!=='none'; })[0];
+    if(!sec) return;
+    document.querySelectorAll('.toc-box').forEach(function(x){ x.remove(); });
+    var hs=[].slice.call(sec.querySelectorAll(':scope > h3'));
+    if(hs.length<3) return;
+    var d=document.createElement('details'); d.className='toc-box';
+    var html='<summary>本章目錄（'+hs.length+' 節）</summary><ol>';
+    hs.forEach(function(h,i){
+      if(!h.id) h.id=sec.id+'-h'+i;
+      html+='<li><a href="javascript:void(0)" data-go="'+h.id+'">'+h.textContent.trim()+'</a></li>';
+    });
+    d.innerHTML=html+'</ol>';
+    sec.insertBefore(d, sec.firstElementChild && sec.firstElementChild.tagName==='H2'
+      ? sec.firstElementChild.nextSibling : sec.firstChild);
+    d.addEventListener('click',function(e){
+      var a=e.target.closest('a[data-go]'); if(!a) return;
+      var el=document.getElementById(a.dataset.go);
+      if(el){ d.open=false; el.scrollIntoView({behavior:'smooth',block:'start'}); }
+    });
+  }
+  var origGo=window.__goPage;
+  if(origGo){ window.__goPage=function(id,push){ origGo(id,push); build(); }; }
+  window.addEventListener('hashchange', function(){ setTimeout(build,30); });
+  build();
+
+  document.addEventListener('scroll',function(){
+    top.classList.toggle('show', window.scrollY>700);
+  },{passive:true});
+  top.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+
+  /* 摺疊區裡的長表格加上自己的捲動容器 */
+  document.querySelectorAll('details table').forEach(function(t){
+    if(t.rows.length>18 && !t.parentNode.classList.contains('tbl-scroll')){
+      var w=document.createElement('div'); w.className='tbl-scroll';
+      t.parentNode.insertBefore(w,t); w.appendChild(t);
+    }
+  });
 })();
 </script>
 </body>
