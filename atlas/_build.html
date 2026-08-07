@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta charset="utf-8"><title>build arm-inner.svg</title>
+<style>body{margin:0;background:#140f1e}#fig svg{display:block}</style></head>
+<body>
+<div id="fig"></div>
+<script src="arm-inner.js"></script>
+<script>
+ARM_INNER.render(document.getElementById('fig'), {mer:'ALL', sel:null}, null);
+
+/* 驗收自檢：由圖上 y 反推寸值，與 loc 描述比對 */
+function expectedCun(loc){
+  var m;
+  if ((m = loc.match(/腕(?:掌側)?橫紋上([\d.]+)寸/))) return +m[1];
+  if ((m = loc.match(/腋前紋頭下([\d.]+)寸/)))        return 21 - +m[1];
+  if ((m = loc.match(/肘橫紋上([\d.]+)寸/)))          return 12 + +m[1];
+  if (/^肘橫紋中/.test(loc) || /肘橫紋內側端/.test(loc)) return 12;
+  if (/腕掌側橫紋/.test(loc)) return 0;
+  return null;
+}
+window.__check = function(){
+  var rows = [], fails = 0, checked = 0, manual = 0;
+  ARM_INNER.panel.pts.forEach(function(p){
+    if (p.manual){ manual++; rows.push([p.code,'manual','—','—']); return; }
+    var got = ARM_INNER.yToCun(ARM_INNER.resolve(p).y);
+    var exp = expectedCun(ARM_INNER.LOC[p.code]);
+    if (exp === null){ rows.push([p.code,'無寸數','—','—']); return; }
+    var err = Math.abs(got - exp); checked++; if (err > 0.5) fails++;
+    rows.push([p.code, exp.toFixed(1), got.toFixed(2), err.toFixed(3)]);
+  });
+  return JSON.stringify({checked:checked, fails:fails, manual:manual,
+    total:ARM_INNER.panel.pts.length, rows:rows});
+};
+window.__svg = function(){
+  var s = document.querySelector('#fig svg').outerHTML;
+  return '<?xml version="1.0" encoding="UTF-8"?>\n' + s;
+};
+</script>
+</body>
+</html>

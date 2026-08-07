@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>arm-inner 手機驗收</title>
+<style>
+/* 這段就是合併進 index.html 時，面板容器該有的 CSS */
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#140f1e;color:#e6ddc8;padding:14px;overflow-x:hidden;
+     font-family:"微軟正黑體","Microsoft JhengHei","PingFang TC","Noto Sans TC",sans-serif}
+.bar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+button{font:inherit;font-size:12.5px;padding:5px 10px;background:#1d1730;color:#e6ddc8;
+       border:1px solid rgba(201,162,39,.22);border-radius:5px;cursor:pointer}
+button[aria-pressed="true"]{background:#c9a227;color:#140f1e;font-weight:700}
+.figwrap{border:1px solid rgba(201,162,39,.22);border-radius:8px;background:#1d1730;
+         overflow-x:auto;overflow-y:hidden;max-width:100%;-webkit-overflow-scrolling:touch}
+.figwrap svg{display:block}
+.detail{border:1px solid rgba(201,162,39,.22);border-radius:8px;background:#1d1730;
+        padding:12px 14px;margin-top:10px;min-height:80px;font-size:14px}
+.detail .code{font-size:12px;color:#a396b5;margin-left:8px}
+.detail .mer{font-size:12px;color:#a396b5;margin:2px 0 8px}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<div class="figwrap" id="fig"></div>
+<div class="detail" id="detail">點擊圖上任一穴位，這裡顯示完整定位。</div>
+<script src="arm-inner.js"></script>
+<script>
+var state = { mer: "ALL", sel: null };
+function onSelect(code, info) {
+  state.sel = code; paint();
+  document.getElementById('detail').innerHTML =
+    '<div><b>' + info.name + '</b><span class="code">' + info.code + '</span></div>' +
+    '<div class="mer">' + info.meridian + '</div><div>' + info.loc + '</div>';
+}
+function paint() { ARM_INNER.render(document.getElementById('fig'), state, onSelect); }
+(function () {
+  var bar = document.getElementById('bar');
+  ["ALL"].concat(ARM_INNER.panel.order).forEach(function (m) {
+    var b = document.createElement('button');
+    b.textContent = m === "ALL" ? "全部" : ARM_INNER.MER[m].name;
+    b.setAttribute('aria-pressed', state.mer === m);
+    b.onclick = function () {
+      state.mer = m;
+      [].forEach.call(bar.children, function (x, i) {
+        x.setAttribute('aria-pressed', (["ALL"].concat(ARM_INNER.panel.order))[i] === m);
+      });
+      paint();
+    };
+    bar.appendChild(b);
+  });
+  paint();
+})();
+</script>
+</body>
+</html>
