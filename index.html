@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#100b1a">
 <meta name="apple-mobile-web-app-title" content="五術總本">
 <meta property="og:title" content="五術知識系統｜山・醫・命・相・卜">
-<meta property="og:description" content="山醫命相卜總本：太極拳架、穴位按摩流程、十四經 361 穴、玄空飛星與奇門遁甲排盤器。">
+<meta property="og:description" content="山醫命相卜總本：穴位測驗與按摩流程、十四經 361 穴、太極拳架、紫微斗數、玄空飛星與奇門遁甲排盤器。">
 <meta property="og:type" content="website">
 <title>五術知識系統｜山・醫・命・相・卜</title>
 <style>
@@ -313,6 +313,19 @@ header.hero.pg-on{display:block}
   #grpbar.one{display:none}
   main{padding-bottom:96px !important}
 }
+
+/* ---- 穴位測驗 ---- */
+#qz-opts button{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 14px;
+  border:1px solid #46335f;border-radius:7px;background:#231637;color:#e6ddc8;
+  font-family:inherit;font-size:15px;cursor:pointer;line-height:1.7}
+#qz-opts button:hover:not(:disabled){border-color:var(--gilt);background:#2b1b42}
+#qz-opts button:disabled{cursor:default}
+#qz-opts button.ok{background:#1c3326;border-color:#5fae7f;color:#bfe8cd}
+#qz-opts button.no{background:#3a1c1c;border-color:#c0392b;color:#f0c4bf}
+#qz-bar{height:5px;background:#2a2038;border-radius:3px;overflow:hidden;margin:10px 0 14px}
+#qz-bar i{display:block;height:100%;background:var(--gilt);transition:width .25s}
+.qz-q{font-size:17px;color:#e6c869;font-weight:700;line-height:1.8;margin-bottom:4px}
+.qz-sub{color:var(--dim);font-size:13px;margin-bottom:10px}
 /* ---- 經絡人與經穴 ---- */
 .mp-wrap{background:#140f1e;border:1px solid var(--line);border-radius:8px;padding:10px;overflow-x:auto}
 .mp-wrap svg{display:block;margin:0 auto;max-width:100%;height:auto}
@@ -1602,6 +1615,24 @@ header.hero.pg-on{display:block}
   <h4>分經穴位全表</h4>
   <p>十四經 361 穴，依循行順序排列，定位採現行標準經穴部位。<b>寸為骨度分寸</b>（自身比例），量法見上方實用篇。</p>
   <div id="mp-tables"></div>
+  <h4>穴位測驗——背熟了沒，會不會用</h4>
+  <p>從本頁的資料即時出題：定位、歸經、情境應用、口訣各一類。答錯會立刻告訴你正解與依據，十題一輪。<b>成績不會保存</b>，重整就歸零，純粹拿來自我檢查。</p>
+  <div class="card">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px">
+      <label>範圍　<select id="qz-scope" style="padding:5px 9px;border:1px solid #46335f;border-radius:6px;background:#231637;color:#eee;font-family:inherit"></select></label>
+      <label>題型　<select id="qz-type" style="padding:5px 9px;border:1px solid #46335f;border-radius:6px;background:#231637;color:#eee;font-family:inherit">
+        <option value="mix">綜合（推薦）</option>
+        <option value="loc">看穴名選定位</option>
+        <option value="name">看定位選穴名</option>
+        <option value="mer">穴位歸哪一經</option>
+        <option value="use">情境應用：該按哪個穴</option>
+        <option value="verse">口訣填空</option>
+      </select></label>
+      <button id="qz-go" class="fx-btn">開始測驗</button>
+    </div>
+    <div id="qz-bar" style="display:none"><i style="width:0"></i></div>
+    <div id="qz-body"></div>
+  </div>
   <h4>背誦口訣</h4>
   <p>口訣是古人壓縮資訊的辦法——把定位與歸類編成韻文，靠聲音記住。以下依「先記架構、再記常用、最後備查逐穴」三層排列。</p>
   <div class="key"><b>第一層・十二經脈流注歌</b>（記氣血輪值的次序，一天十二時辰走完一輪）<br>
@@ -7567,6 +7598,26 @@ header.hero.pg-on{display:block}
     <tr><td><b>武曲</b></td><td>財帛主・陰金・化財・主孤寡</td><td>剛硬、不解風情、執行力強、在意錢、果決不屈</td><td>錢財、金屬、短慮、親力親為、固執</td></tr>
     <tr><td><b>巨門</b></td><td>暗曜・陰水・化暗・主是非</td><td>口舌辯論、是非、記憶洞察、心思深沉、距離感</td><td>口舌是非、隔閡、暗藏、吸納</td></tr>
   </table>
+  <h4>十四主星・男命女命特性</h4>
+  <p>同一顆星落在男命與女命，展現的樣子常常不同——這一層是總表沒有的，補在這裡。<b>破軍未列</b>，男女差異不明顯。</p>
+  <table>
+    <tr><th style="width:64px">主星</th><th>男命</th><th>女命</th></tr>
+    <tr><td><b>紫微</b></td><td>自我、任性、管不得、愛面子、多疑</td><td>女王感，在意自己的形象與狀態</td></tr>
+    <tr><td><b>天府</b></td><td>想搏一發大的</td><td>工作能力好、善於分配</td></tr>
+    <tr><td><b>天機</b></td><td>固執、專業、打扮偏機能性</td><td>桃花相對更好、容易嫌棄另一半、打扮有創意</td></tr>
+    <tr><td><b>太陰</b></td><td>外表斯文、情緒細膩</td><td>個性像母親</td></tr>
+    <tr><td><b>天同</b></td><td>年輕發福；享樂品偏男性共通的那些</td><td>中年發福；享樂品偏打扮與享受類</td></tr>
+    <tr><td><b>天梁</b></td><td>老成，感情裡是照顧者的角色</td><td>可愛；家庭分工上偏女主外男主內</td></tr>
+    <tr><td><b>七殺</b></td><td>桃花不旺、工作運好</td><td>桃花旺、工作運相對不順</td></tr>
+    <tr><td><b>破軍</b></td><td colspan="2" style="color:var(--dim)">—— 男女差異不明顯，未另立</td></tr>
+    <tr><td><b>貪狼</b></td><td>有遮掩感，不會全攤開來</td><td>感情路上多考驗</td></tr>
+    <tr><td><b>廉貞</b></td><td>風流倜儻</td><td>有距離感</td></tr>
+    <tr><td><b>天相</b></td><td>偏瘦高、挑剔</td><td>善於連結，不容易被他人影響</td></tr>
+    <tr><td><b>太陽</b></td><td>父權性格明顯</td><td>愛情運較坎坷</td></tr>
+    <tr><td><b>武曲</b></td><td>愛情問題少、專心賺錢；容易嫌另一半跟不上自己</td><td>喜歡的就不放手，容易糾纏錯的人</td></tr>
+    <tr><td><b>巨門</b></td><td>講話太直接</td><td>據理力爭</td></tr>
+  </table>
+  <div class="modern"><b>【現代調整】</b>男女命分列是傳統斗數的既有體例，反映的是舊社會對兩性角色的預設——「女主外男主內」被當成特徵、「桃花旺」配「工作運不好」被當成一組，這些框架本身帶著時代限制。實務上把它當作<b>同一顆星的兩種常見表現型</b>來看即可，不必按性別對號入座；性別只是影響表現方式的變項之一，成長環境與個人選擇的權重更大。</div>
   <h4>輔星：六吉、四煞、空劫（第二權重層）</h4>
   <table>
     <tr><th style="width:80px">類別</th><th>星與關鍵詞</th><th>要點</th></tr>
@@ -9039,6 +9090,7 @@ var MP_PT=[["LU",1,"中府","LU1","胸前壁外上方，前正中線旁開6寸�
     '<b>合谷</b>：按揉 1 分鐘，兩手']]
   };
   var flowBox=document.getElementById('ac-flow');
+  window.AC_PTS=P; window.AC_FLOW=FLOW;
 
   var gd=document.getElementById('ac-dots'), info=document.getElementById('ac-info'), NS='http://www.w3.org/2000/svg';
 
@@ -9166,6 +9218,141 @@ var MP_PT=[["LU",1,"中府","LU1","胸前壁外上方，前正中線旁開6寸�
 
   go(location.hash.slice(1)||'intro');
   window.__goPage=go;
+})();
+</script>
+
+<script>
+/* 穴位測驗：由 MP_PT / AC_PTS / 口訣資料即時出題 */
+(function(){
+  var scopeSel=document.getElementById('qz-scope'), typeSel=document.getElementById('qz-type'),
+      go=document.getElementById('qz-go'), body=document.getElementById('qz-body'),
+      bar=document.getElementById('qz-bar');
+  if(!scopeSel) return;
+  var MNAME={}; MP_META.forEach(function(m){ MNAME[m[0]]=m[1]; });
+
+  var VERSE=[
+    ['四總穴歌：肚腹（　　）留','三里','委中','列缺','合谷'],
+    ['四總穴歌：腰背（　　）求','委中','三里','合谷','太衝'],
+    ['四總穴歌：頭項尋（　　）','列缺','後谿','風池','天柱'],
+    ['四總穴歌：面口（　　）收','合谷','內關','迎香','太陽'],
+    ['八會穴歌：腑會（　　）臟章門','中脘','膻中','太淵','大杼'],
+    ['八會穴歌：筋會（　　）','陽陵','絕骨','膈俞','大杼'],
+    ['八會穴歌：血會（　　）骨大杼','膈俞','章門','太淵','膻中'],
+    ['八會穴歌：脈（　　）氣膻中','太淵','神門','內關','經渠'],
+    ['十二經流注：肺大胃脾心小腸，膀腎（　　）膽肝詳','包焦','焦包','心包','三焦'],
+    ['走向歌：手之三陰（　　）','胸走手','手走頭','頭走足','足走腹'],
+    ['走向歌：足之三陽（　　）','頭走足','足走腹','胸走手','手走頭']
+  ];
+
+  // 範圍選單
+  var opts=[['COMMON','常用穴（實用篇 23 穴）'],['ALL','全部 361 穴']];
+  MP_META.forEach(function(m){ if(m[0]!=='EX') opts.push([m[0], m[1]]); });
+  opts.forEach(function(o){ var e=document.createElement('option'); e.value=o[0]; e.textContent=o[1]; scopeSel.appendChild(e); });
+
+  function pool(){
+    var s=scopeSel.value;
+    if(s==='ALL') return MP_PT.filter(function(p){return p[0]!=='EX'});
+    if(s==='COMMON'){
+      var names={}; (window.AC_PTS||[]).forEach(function(a){ names[a[1]]=1; });
+      return MP_PT.filter(function(p){ return names[p[2]]; });
+    }
+    return MP_PT.filter(function(p){ return p[0]===s; });
+  }
+  function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
+  function shuffle(a){ for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;} return a; }
+  function others(arr, not, n, key){
+    var c=arr.filter(function(x){ return key(x)!==key(not); }), out=[], seen={};
+    shuffle(c.slice()).forEach(function(x){ if(out.length<n && !seen[key(x)]){ seen[key(x)]=1; out.push(x); } });
+    return out;
+  }
+
+  function makeQ(kind, ps){
+    if(kind==='verse'){
+      var v=pick(VERSE);
+      return {q:v[0], sub:'口訣填空', opts:shuffle([v[1],v[2],v[3],v[4]]), ans:v[1], why:'正解：'+v[1]};
+    }
+    if(kind==='use' && window.AC_FLOW){
+      var keys=Object.keys(window.AC_FLOW), sc=pick(keys);
+      var inSc={}, mine=[];
+      window.AC_PTS.forEach(function(a){ if(a[0]===sc){ inSc[a[1]]=1; mine.push(a); } });
+      var right=pick(mine);
+      var wrong=[], seen={};
+      shuffle(window.AC_PTS.slice()).forEach(function(a){
+        if(wrong.length<3 && !inSc[a[1]] && !seen[a[1]]){ seen[a[1]]=1; wrong.push(a[1]); }
+      });
+      return {q:'想舒緩「'+sc+'」時，下列哪一個穴位屬於這套流程？', sub:'情境應用',
+              opts:shuffle([right[1]].concat(wrong)), ans:right[1],
+              why:'<b>'+right[1]+'</b>（'+right[2]+'）　'+right[3]+'<br><b>怎麼按：</b>'+right[4]};
+    }
+    var p=pick(ps);
+    if(kind==='mer'){
+      var rm=MNAME[p[0]];
+      var wm=others(MP_META.filter(function(m){return m[0]!=='EX'}), [p[0]], 3, function(x){return x[0]||x;})
+             .map(function(m){return m[1]});
+      return {q:'「'+p[2]+'」（'+p[3]+'）屬於哪一條經？', sub:'歸經',
+              opts:shuffle([rm].concat(wm)), ans:rm, why:'<b>'+p[2]+'</b> '+p[3]+'　'+p[4]};
+    }
+    if(kind==='name'){
+      var w=others(ps, p, 3, function(x){return x[2]}).map(function(x){return x[2]});
+      return {q:'哪一個穴位的定位是：'+p[4], sub:'看定位選穴名',
+              opts:shuffle([p[2]].concat(w)), ans:p[2], why:'<b>'+p[2]+'</b>（'+p[3]+'）　'+MNAME[p[0]]};
+    }
+    var w2=others(ps, p, 3, function(x){return x[4]}).map(function(x){return x[4]});
+    return {q:'「'+p[2]+'」（'+p[3]+'）的定位是？', sub:'看穴名選定位',
+            opts:shuffle([p[4]].concat(w2)), ans:p[4], why:'<b>'+p[2]+'</b> 屬 '+MNAME[p[0]]+'，位於'+p[5]+'部'};
+  }
+
+  var Q=[], idx=0, score=0, wrongList=[];
+  function start(){
+    var ps=pool();
+    if(ps.length<5){ body.innerHTML='<p>這個範圍的穴位太少，換一個。</p>'; return; }
+    var kinds = typeSel.value==='mix' ? ['loc','name','mer','use','verse'] : [typeSel.value];
+    Q=[]; var used={};
+    for(var i=0;i<10;i++){
+      var q, tries=0;
+      do { q=makeQ(kinds[i%kinds.length], ps); tries++; } while(used[q.q+'|'+q.ans] && tries<25);
+      used[q.q+'|'+q.ans]=1; Q.push(q);
+    }
+    if(typeSel.value==='mix') shuffle(Q);
+    idx=0; score=0; wrongList=[]; bar.style.display='block'; render();
+  }
+  function render(){
+    bar.firstElementChild.style.width=(idx/10*100)+'%';
+    if(idx>=10) return done();
+    var q=Q[idx];
+    body.innerHTML='<div class="qz-q">'+(idx+1)+'. '+q.q+'</div><div class="qz-sub">'+q.sub+'　｜　答對 '+score+' 題</div><div id="qz-opts"></div><div id="qz-why" style="margin-top:10px"></div>';
+    var box=document.getElementById('qz-opts');
+    q.opts.forEach(function(o){
+      var b=document.createElement('button'); b.textContent=o;
+      b.addEventListener('click',function(){ answer(o,box,q); });
+      box.appendChild(b);
+    });
+  }
+  function answer(chosen, box, q){
+    [].forEach.call(box.children,function(b){
+      b.disabled=true;
+      if(b.textContent===q.ans) b.classList.add('ok');
+      else if(b.textContent===chosen) b.classList.add('no');
+    });
+    if(chosen===q.ans) score++; else wrongList.push(q);
+    var why=document.getElementById('qz-why');
+    why.innerHTML='<div class="key">'+(chosen===q.ans?'<b>答對。</b>':'<b>答錯。</b>')+q.why+'</div>'+
+      '<button class="fx-btn" id="qz-next" style="margin-top:8px">'+(idx>=9?'看成績':'下一題')+'</button>';
+    document.getElementById('qz-next').addEventListener('click',function(){ idx++; render(); });
+  }
+  function done(){
+    bar.firstElementChild.style.width='100%';
+    var h='<div class="qz-q">十題答對 '+score+' 題</div>';
+    h+='<p>'+(score>=9?'很熟了，可以換更大的範圍或更難的題型。':score>=7?'基本掌握，錯的那幾個回表上再看一次。':score>=4?'還在建立階段，建議先縮小範圍、一條經一條經練。':'先別急著測驗，回去把定位表讀過一輪再來。')+'</p>';
+    if(wrongList.length){
+      h+='<p><b>錯題複習</b></p>';
+      wrongList.forEach(function(q){ h+='<div class="note" style="margin:8px 0">'+q.q+'<br>'+q.why+'</div>'; });
+    }
+    h+='<button class="fx-btn" id="qz-again">再來一輪</button>';
+    body.innerHTML=h;
+    document.getElementById('qz-again').addEventListener('click',start);
+  }
+  go.addEventListener('click',start);
 })();
 </script>
 </body>
