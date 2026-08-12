@@ -491,6 +491,27 @@ h3[id],h4[id]{scroll-margin-top:72px}
 .tj-tcard{padding:14px 18px;margin-bottom:12px}
 .tj-tcard p{margin:5px 0;font-size:14px}
 
+/* v2：練習條件／驗證方式、教材卡、筆記 */
+.tj-two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tj-cond{background:#1a1628;border:1px solid var(--line);border-radius:6px;padding:11px 15px;margin:0}
+.tj-cond>b{color:#c9b7e6}
+.tj-verify{background:#16211d;border:1px solid rgba(120,185,160,.32);border-left:3px solid #6fae97;border-radius:6px;padding:11px 15px;margin:0}
+.tj-verify>b{color:#8fd3b6}
+.tj-mhead{margin-bottom:5px}
+.tj-mdesc{font-size:13px;color:var(--sub);margin:5px 0;line-height:1.75}
+.tj-mwhy{font-size:13px;color:#d9c58a;background:rgba(201,162,39,.07);border-radius:4px;padding:6px 9px;margin:5px 0 8px;line-height:1.75}
+.tj-mwhy b{color:#e6c869}
+.tj-watch{display:inline-block;text-decoration:none;font-size:13.5px;padding:3px 14px}
+.tj-watch.off{opacity:.45;cursor:default;background:#2a2338;color:#9b8fae;border-color:#4a3d63}
+.tj-tag.rec{border-color:rgba(76,175,80,.55);color:#8fd3a0}
+.tj-more{margin-top:10px;padding:10px 14px}
+.tj-more>summary{font-size:14px}
+.tj-notes textarea{width:100%;box-sizing:border-box;background:#171126;border:1px solid var(--line);border-radius:6px;
+  color:var(--ink);font-family:inherit;font-size:14px;line-height:1.8;padding:9px 12px;resize:vertical}
+.tj-notes textarea:focus{outline:none;border-color:var(--gilt)}
+.tj-noteline{display:flex;align-items:center;gap:10px;margin-top:7px}
+.tj-hasnote{font-style:normal;color:#e6c869;margin-left:3px}
+@media (max-width:860px){ .tj-two{grid-template-columns:1fr} }
 @media (max-width:860px){
   .tj-today-g{grid-template-columns:1fr}
   .tj-chips{gap:5px 2px}
@@ -1629,14 +1650,14 @@ h3[id],h4[id]{scroll-margin-top:72px}
 <!-- ================= 太極 ================= -->
 <section id="taiji">
   <h2>山・內家拳・太極拳 <small>從「站得對」到「用得出來」的學習地圖</small></h2>
-  <div class="path"><b>本章脈絡　</b>本章不是拳譜百科，也不是影片收藏。它是一張<b>自學導航圖</b>：先看懂太極到底在學什麼、自己現在在哪一階段 → 點開任一能力節點，讀「這是什麼／真正要練什麼／判斷重點／常見錯誤／練習方法／自我檢查」 → 標記自己的進度 → 最後才去看對應的免費教材。<b>能力節點在第一層，老師在第二層。</b></div>
+  <div class="path"><b>本章脈絡　</b>本章不是拳譜百科，也不是影片收藏。它是一張<b>自學導航圖</b>：先看懂太極到底在學什麼、自己現在在哪一階段 → 點開任一能力節點，讀「這是什麼／核心原理／判斷重點／常見錯誤／練習方法／練習條件／驗證方式」 → 看精選教材 → 寫下自己的筆記。<b>能力節點在第一層，老師在第二層。</b></div>
 
   <div class="key"><b>三十秒先回答五件事。</b><br>
   <b>① 我現在該先練什麼？</b>看下面的學習地圖，從第一階段最左邊還沒完成的那一格開始，或直接看「今天可以練什麼」。<br>
   <b>② 這個東西為什麼重要？</b>每個節點都有「為什麼重要」與一條因果鏈，告訴你它會影響後面哪些能力。<br>
-  <b>③ 我怎麼知道自己做對？</b>每個節點都有「判斷重點」與「自我檢查」——這是本章最重要的部分。<br>
-  <b>④ 有哪些免費教材？</b>節點頁底部會列出對應教材；完整教材庫在頁尾，可依老師、程度、內容、平台篩選。<br>
-  <b>⑤ 什麼時候該找真人老師？</b>每個節點都有<b>自學難度分級</b>（綠／黃／橙／紅）。到紅色那一層，繼續只看影片就沒有意義了。</div>
+  <b>③ 我怎麼知道自己做對？</b>每個節點都有「判斷重點」與「驗證方式」——這是本章最重要的部分。<br>
+  <b>④ 有哪些免費教材？</b>節點頁底部先給<b>精選 3–5 支</b>，其餘收在「更多教材」；完整教材庫在頁尾，可依老師、節點、套路、平台、類型、程度篩選。<br>
+  <b>⑤ 這個東西要怎麼練、練了怎麼驗證？</b>每個節點都有<b>練習條件</b>（單人／雙人／器械／錄影）與<b>驗證方式</b>——回答「我怎麼知道練到的是這個東西，而不是只有外形相似」。</div>
 
   <h3 id="tj-pos">它在五術中的位置</h3>
   <p>太極拳歸<b>山</b>——山是修身，分靜功與動功兩路。<a href="#dao">道與丹</a>那章講的靜坐屬靜功；太極、八段錦、易筋經、五禽戲屬<b>動功</b>，古稱<b>導引</b>。太極在動功之中又自成一支：它同時是<b>養生法</b>與<b>內家拳</b>，兩條線在同一套動作裡並行。本章的定位是：</p>
@@ -1668,7 +1689,7 @@ h3[id],h4[id]{scroll-margin-top:72px}
   <div id="tj-teacher-box"></div>
 
   <h3 id="tj-media">免費教材庫</h3>
-  <p>可依老師、程度、內容節點、平台篩選。<b>影片是最後一層輔助教材</b>——先讀完節點的判斷重點與常見錯誤，再帶著問題去看影片，效果差非常多。</p>
+  <p>可依老師、節點、套路、平台、類型、程度篩選。所有教材一律<b>外連原平台</b>，不做站內嵌入（Facebook 一類的 embed 會受登入與追蹤防護影響，失敗時整筆資料就看不到了）。</p>
   <div class="card">
     <div id="tj-filters"></div>
     <div id="tj-media-box"></div>
@@ -1729,7 +1750,7 @@ h3[id],h4[id]{scroll-margin-top:72px}
   </details>
 
   <div class="key"><b>每日最小配方（15 分鐘）：</b>無極樁 5 分 → 重心轉換 20 趟 → 鬆肩沉肘 10 次 → 若已學套路，慢打一遍二十四式（約 6 分）。<b>每天做比一週做一次久有效得多</b>——這一點與靜坐日課的道理相同。</div>
-  <div class="note"><b>教材資料狀態：</b>目前教材庫的影片條目為<b>結構占位</b>（老師、節點、程度、平台欄位已建好，連結欄位留空並標示「待補」），本頁不會自行生成不存在的網址。實際連結補上之後，卡片會自動變成可點擊。</div>
+  <div class="note"><b>教材資料狀態：</b>標示<b>「未驗證」</b>的卡片，其連結取自搜尋索引、標題與頻道可對上，但本機環境無法開啟該平台的影片頁做最後確認，第一次點的時候順手確認一下。凌音目前<b>沒有</b>任何可驗證的公開連結，因此該老師名下為 0 筆——不用假資料補。</div>
 </section>
 
 
@@ -11250,22 +11271,16 @@ var MP_PT=[["LU",1,"中府","LU1","胸前壁外上方，前正中線旁開6寸�
    新增教材：往 TJ_MEDIA 加一筆，topics 對到 TJ_NODES 的 id。
    新增老師：往 TJ_TEACHERS 加一筆，id 對到 TJ_MEDIA 的 teacher。 */
 
-var TJ_LV=[null,
-  {k:'綠',c:'lv1',t:'適合自學',d:'看影片＋自己對鏡子練就能有效進步'},
-  {k:'黃',c:'lv2',t:'可自學，建議錄影檢查',d:'自己感覺不準，要用手機側錄回看才抓得到問題'},
-  {k:'橙',c:'lv3',t:'建議定期真人修正',d:'影片能建立概念，但需要有人定期看你、動手調整'},
-  {k:'紅',c:'lv4',t:'強烈建議雙人／老師指導',d:'必須有對象、有回饋才練得到；只看影片會練出錯誤的東西'}];
-
 var TJ_STAGES=[
   {n:'第一階段｜建立身體',q:'身體會不會站、會不會移動、會不會維持結構？',
    d:'這一階段完全不碰「勁」。目標只有一個：讓身體在靜止與移動時都能維持一個穩定、不亂扭的結構。跳過這一階段直接學套路，是絕大多數人練了三年還在原地的原因。'},
   {n:'第二階段｜把身體連起來',q:'身體是不是還是一節一節在動，還是已經開始形成整體連動？',
    d:'這一階段的關鍵字是「連」。手動的時候腰有沒有動、腰動的時候腳有沒有參與。做不到連動，後面的整勁與發勁都只是手臂用力的變體。'},
   {n:'第三階段｜進入互動與應用',q:'能不能在與外力接觸時維持結構、感受力量並作出適當反應？',
-   d:'這一階段開始有「別人」。所有能力都只在接觸中才成立，也只在接觸中才能被檢驗——因此這一整階段沒有任何一項適合純線上自學。'}];
+   d:'這一階段開始有「別人」。所有能力都只在接觸中才成立，也只在接觸中才能被檢驗——影片能建立概念與判斷標準，驗證則必須在接觸裡完成。'}];
 
 var TJ_NODES=[
-{id:'prep',n:'身體準備',st:0,lv:1,
+{id:'prep',n:'身體準備',st:0,
  what:'開始練拳之前，先確認身體具備最低限度的活動度與控制能力。太極的架式對踝、髖、胸椎的活動度有基本要求，缺了就會用別的地方代償——最常見的代償點就是膝蓋與腰椎，這也是太極最常見的兩個傷處。',
  train:['踝背屈活動度（決定你蹲下去時膝蓋會不會被迫前推）','髖屈與髖外旋活動度（決定胯能不能轉）','胸椎旋轉活動度（決定含胸拔背是不是靠駝背假裝的）','單腳站的基本平衡','自然呼吸不憋氣'],
  why:'活動度不夠，動作只能靠代償完成。而代償出來的姿勢，練得越勤傷得越快。',
@@ -11277,10 +11292,11 @@ var TJ_NODES=[
   {n:'九十／九十髖旋轉',goal:'打開髖內外旋，讓胯轉得動',care:'不追求角度，痛就退回來',check:'兩側角度差距是否明顯'},
   {n:'胸椎旋轉（四足跪姿轉胸）',goal:'讓上背轉得動，避免用腰代償',care:'骨盆固定不跟著轉',check:'轉動時腰有沒有被拉走'},
   {n:'單腳站（睜眼→閉眼）',goal:'建立最基本的平衡儲備',care:'扶著東西開始，逐步放手',check:'腳掌是否一直在大幅度抓地修正'}],
- check:['蹲下時腳跟會不會離地','膝蓋方向是否始終跟著腳尖','呼吸有沒有因為姿勢而變淺或憋住','練完隔天是膝蓋痛還是大腿痠——膝蓋痛就是姿勢問題'],
+
+ cond:['單人即可','建議對鏡或側錄'], verify:['蹲下時腳跟會不會離地','膝蓋方向是否始終跟著腳尖','呼吸有沒有因為姿勢而變淺或憋住','練完隔天是膝蓋痛還是大腿痠——膝蓋痛就是姿勢問題'],
  pre:[],next:['body','zhuang']},
 
-{id:'body',n:'身形與中正',st:0,lv:2,
+{id:'body',n:'身形與中正',st:0,
  what:'把身體排成一個能承重、能傳力的柱子。「中正」不是站得筆直，而是頭、脊、骨盆、腿之間的相對關係讓重量能順著骨架落到腳底，而不是靠肌肉硬撐在某一節上。',
  train:['頭頸拉長而不仰（虛靈頂勁的可操作版本）','肋骨不外翻、胸口不挺（含胸拔背）','骨盆中立、尾閭自然下垂（不是刻意夾臀）','膝蓋方向與腳尖一致','全身重量能落到腳掌中段偏後'],
  why:'中正是所有後面能力的地基。結構不對，鬆下去就是塌，沉下去就是壓膝蓋，發勁就變成用手臂甩。',
@@ -11292,14 +11308,15 @@ var TJ_NODES=[
   {n:'頂頭懸想像',goal:'找到拉長頸椎而非仰頭的感覺',care:'想像頭頂被線輕輕提起，下巴微收',check:'錄影看下巴有沒有抬起來'},
   {n:'轉腰不動頭',goal:'把旋轉交給胯與胸椎，不是頸與腰',care:'雙手垂放，腰胯左右轉，眼睛盯住前方一點',check:'頭頂高度與視線高度是否穩定'},
   {n:'單腳離地測試',goal:'驗證重心是否真的在支撐腳上',care:'不要先把上身甩過去再抬腳',check:'抬腳瞬間身體有沒有先晃一下'}],
- check:['側錄一段站姿，看耳肩髖踝是否成線','轉腰時頭有沒有跟著晃','抬腳前需不需要上身先傾過去','站三分鐘後，最先痠的是大腿還是腰與肩頸——後者代表在用錯地方撐'],
+
+ cond:['單人即可','需要鏡子或側面錄影——這一節自己的感覺最不準'], verify:['側錄一段站姿，看耳肩髖踝是否成線','轉腰時頭有沒有跟著晃','抬腳前需不需要上身先傾過去','站三分鐘後，最先痠的是大腿還是腰與肩頸——後者代表在用錯地方撐'],
  term:{trad:'虛靈頂勁・含胸拔背・尾閭中正',
   obs:['頸椎維持中立、不過度前伸','胸廓不外翻，肋骨與骨盆保持相對位置','骨盆處於中立、不前傾也不後捲','重心線落在腳掌中段'],
   feel:['頭頂有被輕輕提起的感覺','胸口不緊、呼吸可以往下走','站著比平常省力'],
   no:'這些是姿勢排列的描述，不代表存在一條可測量的「勁路」貫穿頭頂。體感是有的，機制解釋要保守。'},
  pre:['prep'],next:['zhuang','step']},
 
-{id:'zhuang',n:'樁功',st:0,lv:2,
+{id:'zhuang',n:'樁功',st:0,
  what:'在不移動的狀態下，長時間維持一個正確的結構，讓身體學會「用骨架站」而不是「用肌肉撐」。樁功練的不是腿力，是姿勢的耐受度與對身體的覺察。',
  train:['在疲勞出現後仍能維持結構不變形','找出自己習慣性繃緊的位置並逐步放掉','呼吸不因姿勢而改變','足底壓力分布的覺察'],
  why:'樁功是把「身形與中正」從概念變成身體記憶的主要手段，也是後面所有「鬆」的實驗場——你只有在不動的時候，才有餘裕去發現自己哪裡在多出力。',
@@ -11311,10 +11328,11 @@ var TJ_NODES=[
   {n:'混元樁（抱球樁）',goal:'加入手臂負荷後仍維持沉肩墜肘',care:'雙手胸前抱圓、腋下留空。手痠就放下休息，不硬撐',check:'肩膀有沒有聳起來、手肘有沒有揚起'},
   {n:'高架短時樁',goal:'給膝蓋不適者的替代版本',care:'架高到幾乎直立，時間拉長',check:'膝蓋是否完全無不適'},
   {n:'足底覺察',goal:'學會感覺重心落點',care:'閉眼，把注意力輪流放在前掌、外緣、腳跟',check:'能否指出此刻重量偏向哪一側'}],
- check:['能否自然呼吸、能否說話','足底壓力是否平均','膝蓋有沒有內扣','肩頸是否越站越緊','腰椎是不是過度挺直','站完膝蓋痛＝架子太低或膝方向錯，立刻調整不要忍'],
+
+ cond:['單人即可','建議計時'], verify:['呼吸是否自然','肩頸是否逐漸緊繃','膝蓋是否內扣','足底受力是否合理','身體能否維持結構而不是僵硬'],
  pre:['body'],next:['song','step']},
 
-{id:'step',n:'步法與虛實',st:0,lv:1,
+{id:'step',n:'步法與虛實',st:0,
  what:'學會把重量從一隻腳完整轉移到另一隻腳，並且在轉移過程中身體不亂晃、不用衝的。「虛實分明」的意思很具體：任何時刻你都說得出哪隻腳承重、承幾成。',
  train:['重心轉移時上身高度與方向不變','移動由腿與胯發動，不是上身先倒過去','虛腳能隨時自由抬起','進步、退步、側行時膝蓋始終對著腳尖'],
  why:'太極所有動作都在移動中完成。虛實不分（雙重）會讓你既轉不動也發不出，是拳論裡點名最多次的毛病。',
@@ -11326,10 +11344,11 @@ var TJ_NODES=[
   {n:'貓步（進步）',goal:'學會先移重心再落腳',care:'腳跟先著地再逐步踩實，重心未到不落實',check:'落腳前那一瞬間能不能把腳收回來'},
   {n:'退步與側行',goal:'補足前進以外的方向',care:'退步腳尖先著地；側行時膝蓋跟腳尖同向',check:'有沒有出現「先倒過去再站穩」'},
   {n:'單腳站起落',goal:'驗證虛腳是真的虛',care:'站定後緩慢抬起虛腳到膝高再放下',check:'抬腳時支撐側有沒有晃'}],
- check:['重心轉移時頭部是否左右晃動','前腳是否還能自由抬起','膝蓋是否跟腳尖方向一致','移動時是否需要上身先衝出去','錄影從正面看，頭頂的軌跡是不是一條平順的線'],
+
+ cond:['單人即可','建議正面錄影，看頭頂的移動軌跡'], verify:['重心轉移時頭部是否左右晃動','前腳是否還能自由抬起','膝蓋是否跟腳尖方向一致','移動時是否需要上身先衝出去','錄影從正面看，頭頂的軌跡是不是一條平順的線'],
  pre:['body'],next:['bafa','kua']},
 
-{id:'bafa',n:'八法五步',st:0,lv:1,
+{id:'bafa',n:'八法五步',st:0,
  what:'太極的十三個基本要素：掤、捋、擠、按、採、挒、肘、靠（八法／八勁）加上進、退、顧、盼、定（五步）。它們不是八個招式，而是八種與外力互動的方式，套路裡所有動作都是它們的組合。',
  train:['八法各自的方向與結構（先練外形，不急著談勁）','每一法對應的身體排列與重心狀態','五步在移動中如何配合八法','2019 年推出的「八法五步」標準套路是很好的自學載體'],
  why:'八法是後面推手與化勁的語言。沒有八法的概念，推手時只會憑本能推拉；有了八法，你才知道對方在做什麼、自己該回什麼。',
@@ -11341,14 +11360,15 @@ var TJ_NODES=[
   {n:'掤捋擠按四正手（定步）',goal:'把四個最常用的法串成循環',care:'先求連貫不求快，腰帶手',check:'轉換之間有沒有停頓或斷勁'},
   {n:'八法五步標準套路',goal:'用一套短套路把十三勢走完',care:'跟練時把注意力放在重心與腰胯，不是手的位置',check:'錄影對照，看有沒有用手先動'},
   {n:'採挒肘靠概念認識',goal:'知道它們存在與適用時機',care:'這四法多在近身，自學階段只建立概念',check:'能不能說出每一法用在什麼距離'}],
- check:['手臂是不是靠三角肌硬撐','手肘是否鎖死','外力稍微壓下來時，力量能否傳到腳底','身體是否會立刻僵硬','八法轉換時重心有沒有跟著走'],
+
+ cond:['外形可單練','勁的部分需雙人接觸才驗證得了'], verify:['手臂是不是靠三角肌硬撐','手肘是否鎖死','外力稍微壓下來時，力量能否傳到腳底','身體是否會立刻僵硬','八法轉換時重心有沒有跟著走'],
  term:{trad:'掤捋擠按採挒肘靠・進退顧盼定',
   obs:['八種不同的手臂／軀幹角度與力線方向','重心前後左右的轉移模式','接觸點上壓力方向的改變'],
   feel:['掤有向外撐開而不僵的感覺','捋有把對方帶偏而不拉扯的感覺'],
-  no:'八法在外形與方向上是明確可學的；「勁」的部分需要接觸與回饋，單看影片練不出來，這一節的綠燈只給外形。'},
+  no:'八法在外形與方向上是明確可學的；「勁」的部分需要接觸與回饋才驗證得了，外形像不等於勁對。'},
  pre:['step'],next:['form','circle']},
 
-{id:'circle',n:'圓轉與纏絲',st:1,lv:2,
+{id:'circle',n:'圓轉與纏絲',st:1,
  what:'太極的動作幾乎沒有直線。圓轉指的是肢體與軀幹的運動軌跡呈弧形；纏絲（陳式的說法）進一步指肢體在弧形移動中同時帶著旋轉，像擰毛巾一樣的螺旋。',
  train:['關節在弧線上連續移動而不出現折角','前臂的旋前旋後與肩、胯的旋轉同步','旋轉由軀幹發起，末端跟隨','動作連續不斷、沒有停頓點'],
  why:'圓轉是「化」的物理基礎——直線對直線只能硬碰，弧線才能改變對方力的方向。纏絲則是把身體不同節段的旋轉串起來，是整勁的前置條件。',
@@ -11360,10 +11380,11 @@ var TJ_NODES=[
   {n:'雲手',goal:'最經典的圓轉綜合練習',care:'重心左右轉換與手的弧線同步',check:'手到位時重心是否也剛好到位'},
   {n:'開合（緩慢）',goal:'體會軀幹的張與收',care:'配合呼吸但不憋氣，開為呼、合為吸',check:'開合時肋骨有沒有外翻'},
   {n:'畫圓不斷',goal:'訓練連續不斷',care:'單手在身前畫立圓，全程速度均勻不停頓',check:'圓的上下換向處有沒有頓一下'}],
- check:['錄影看軌跡是弧線還是折線','手停住時，只轉胯手臂會不會被帶動','動作有沒有停頓點','肩膀是不是在代替胯做旋轉'],
+
+ cond:['單人即可','建議錄影，看軌跡是弧線還是折線'], verify:['錄影看軌跡是弧線還是折線','手停住時，只轉胯手臂會不會被帶動','動作有沒有停頓點','肩膀是不是在代替胯做旋轉'],
  pre:['bafa'],next:['kua','form']},
 
-{id:'kua',n:'腰胯協調',st:1,lv:2,
+{id:'kua',n:'腰胯協調',st:1,
  what:'「腰胯」在拳論裡常合稱，實際操作要分開看：胯（髖關節）負責旋轉與承重轉移，腰（腰椎）主要負責傳遞而不是主動大幅旋轉。太極說的「腰為主宰」，操作上是「胯帶身、身帶手」。',
  train:['髖關節能獨立旋轉，不靠腰椎代償','重心轉移與胯旋轉同步發生','上肢動作由胯的旋轉驅動','腰椎在旋轉中保持相對穩定'],
  why:'胯是連接腿與軀幹的關口。力量從地面上來、要往手上去，一定經過胯。胯不通，下面的腿力就上不去，整勁無從談起。',
@@ -11375,10 +11396,11 @@ var TJ_NODES=[
   {n:'落胯（坐胯）',goal:'學會用髖折疊承重，而非蹲膝',care:'像要坐在高椅子上，屁股後移、膝不前推',check:'膝蓋壓力是否明顯減輕'},
   {n:'胯帶手',goal:'建立由中央驅動末端的順序',care:'雙手放鬆垂放，快速左右轉胯讓手被甩起來',check:'手是否完全被動'},
   {n:'重心轉換加轉胯',goal:'把移動與旋轉合成一件事',care:'慢，確認兩者同時起同時止',check:'有沒有先移完再轉、或先轉完再移'}],
- check:['只轉胯時上身會不會被帶動','腰椎在轉的時候會不會不舒服','落胯時膝蓋壓力有沒有減輕','手是被帶著走還是自己先動'],
+
+ cond:['單人即可','手放腰際自我觸診，分辨是骨盆在轉還是腰在扭'], verify:['只轉胯時上身會不會被帶動','腰椎在轉的時候會不會不舒服','落胯時膝蓋壓力有沒有減輕','手是被帶著走還是自己先動'],
  pre:['circle','step'],next:['zheng','form']},
 
-{id:'form',n:'套路整合',st:1,lv:1,
+{id:'form',n:'套路整合',st:1,
  what:'把身法、步法、虛實、八法與腰胯連動串成一段連續的動作。套路是一種<b>複習與整合的載體</b>，不是太極拳本身。',
  train:['在連續動作中維持前面所有節點的品質','記住動作順序（這部分最簡單，卻常被當成全部）','速度均勻、不斷不頓','把套路當成檢查表：每一式都問一次重心在哪、胯有沒有轉'],
  why:'套路讓分開練的東西有機會在同一段時間裡同時成立。但反過來說——套路打得漂亮不代表任何一項基礎能力過關。',
@@ -11390,10 +11412,11 @@ var TJ_NODES=[
   {n:'八法五步套路',goal:'更短、更聚焦十三勢的入門選擇',care:'適合完全沒有基礎的人先走這一套',check:'能否邊打邊說出當下用的是哪一法'},
   {n:'分段慢練',goal:'把套路拆成 3–4 段各自練熟',care:'一段練順再接下一段，不要整套囫圇',check:'銜接處有沒有卡住'},
   {n:'單式重複',goal:'把有問題的一式抽出來練三十遍',care:'挑重心轉換最複雜的那幾式',check:'重複三十遍後品質有沒有下降'}],
- check:['錄影全套，逐式檢查膝蓋與腳尖方向','速度是否均勻','有沒有為了記動作而放棄中正','能不能隨時停在任一式並說出重心分配'],
+
+ cond:['單人即可','需要足夠空間','建議全套錄影後逐式回看'], verify:['錄影全套，逐式檢查膝蓋與腳尖方向','速度是否均勻','有沒有為了記動作而放棄中正','能不能隨時停在任一式並說出重心分配'],
  pre:['bafa','kua'],next:['song']},
 
-{id:'song',n:'鬆沉',st:1,lv:2,
+{id:'song',n:'鬆沉',st:1,
  what:'鬆<b>不是</b>全身放軟。鬆是把不必要的張力拿掉，同時保留維持結構所需要的最低張力；沉是讓身體重量能順著結構落到腳底，而不是被半路的肌肉撐住。',
  train:['減少不必要張力','保持結構','維持關節活動性','讓力量能通過軀幹傳遞'],
  why:'鬆沉是第二階段通往第三階段的關鍵閘門。沒有鬆，力量在肩、在腰就斷掉，整勁串不起來；沒有沉，重心浮著，一碰就倒。',
@@ -11406,14 +11429,15 @@ var TJ_NODES=[
   {n:'鬆肩沉肘',goal:'體會用意不用力',care:'雙手緩慢平舉到肩高再放下，想著「肘往下墜」而不是「手往上抬」',check:'手放下時是自己落下還是被放下'},
   {n:'掤手承重測試',goal:'驗證鬆之後力量有沒有到腳',care:'請人在你掤手上緩緩加壓（不是推）',check:'你感覺壓力累積在肩、在腰，還是在腳底'},
   {n:'緩慢開合',goal:'把鬆帶進呼吸與軀幹',care:'開為呼、合為吸，不憋氣、不刻意拉長',check:'呼吸有沒有變得更順'}],
- check:['肩膀是否仍能自由活動','手臂是否不需要硬撐','胯是否可以轉動','脊柱是否仍有支持','重心轉換時是否會突然僵住'],
+
+ cond:['單人可練','雙人緩慢加壓才驗證得了力量有沒有傳到腳'], verify:['肩膀是否仍能自由活動','手臂是否不需要硬撐','胯是否可以轉動','脊柱是否仍有支持','重心轉換時是否會突然僵住'],
  term:{trad:'鬆・沉・氣沉丹田',
   obs:['多餘肌肉張力下降（尤其斜方肌上束、前臂）','呼吸型態往腹式移動、上胸代償減少','軀幹穩定度提高、腹內壓調節','重心線落點更靠近腳掌中段','外力加載時壓力能沿著關節排列往下傳'],
   feel:['下腹穩定','身體感覺變沉','呼吸變深','肩頸張力下降'],
   no:'不要宣稱「已證實有某種物質流入丹田」。可觀察的是張力、呼吸與重心的改變；「氣」是對這組體感的傳統命名，不等於已被證實的生理實體。'},
  pre:['zhuang','form'],next:['zheng']},
 
-{id:'zheng',n:'整勁',st:1,lv:3,
+{id:'zheng',n:'整勁',st:1,
  what:'讓身體在受力或出力時，作為一個整體參與，而不是某一段肌肉單獨工作。傳統說「一動無有不動」，操作上就是腳、胯、軀幹、肩、手在時間上排成一條有先後的鏈。',
  train:['地面反作用力能通過下肢、骨盆、軀幹傳到手','各段啟動有正確的先後順序（由下往上）','接觸點不塌陷、不頂死','在移動中仍然維持這條鏈'],
  why:'整勁是發勁與推手的前提。整不起來的話，發勁只是手臂加速度，推手只是比力氣。',
@@ -11424,14 +11448,15 @@ var TJ_NODES=[
   {n:'牆推（單人）',goal:'體會力從腳底來',care:'手扶牆、身體維持結構，用腿緩慢加力推牆，不要用肩',check:'加力時腳底壓力有沒有增加'},
   {n:'定步承壓',goal:'學會把外來壓力導到腳底',care:'需要同伴緩慢加壓，不是突然推',check:'壓力累積的位置在哪一段'},
   {n:'節節貫串慢練',goal:'把啟動順序練成習慣',care:'極慢做一個推的動作，口述順序：腳→胯→背→肩→手',check:'有沒有哪一段跳過去了'}],
- check:['有人緩慢加壓時，壓力停在身體哪一段','出力時手是不是先動','錄影慢速播放，啟動順序是否由下而上','維持結構的同時，肩膀還能不能自由活動'],
+
+ cond:['單人可用牆或樹幹做阻力','雙人緩慢加壓最準','可慢動作錄影看啟動順序'], verify:['有人緩慢加壓時，壓力停在身體哪一段','出力時手是不是先動','錄影慢速播放，啟動順序是否由下而上','維持結構的同時，肩膀還能不能自由活動'],
  term:{trad:'整勁・節節貫串・力由脊發',
   obs:['地面反作用力','關節排列','全身動力鏈','軀幹旋轉','肌肉啟動時序','張力傳遞','接觸點控制'],
   feel:['力量像從腳底湧上來','身體像一個整塊在動','接觸點上「有東西撐著」但不僵'],
   no:'現代可觀察層面與傳統體感描述並列即可，不必把傳統語言全部改寫成運動科學；重點是分清楚哪些是「現象」、哪些是「對現象的解釋」。'},
  pre:['song','kua'],next:['fajin','tuishou']},
 
-{id:'fajin',n:'發勁',st:2,lv:3,
+{id:'fajin',n:'發勁',st:2,
  what:'在極短時間內把已經串好的整勁釋放出去。發勁不是「用更大的力」，而是「讓已經存在的結構在瞬間傳遞完成」——所以它是整勁的表現，不是另外一種力氣。',
  train:['蓄與發的轉換（先有鬆與沉，才有可放的東西）','極短時間內完成由下而上的傳遞','發完立刻回到中正，不失重心','方向明確，不亂甩'],
  why:'發勁是把前面所有基礎兌現的地方；也因此，任何一項基礎不到位，發勁都會退化成手臂甩擊，而且很容易傷到自己的腰與肩。',
@@ -11442,11 +11467,11 @@ var TJ_NODES=[
   {n:'蓄發轉換慢練',goal:'先把順序練對，再談速度',care:'以正常速度的四分之一做完整個發的過程',check:'有沒有哪一段需要「補一下力」'},
   {n:'沙袋／牆靶輕觸',goal:'有回饋物才知道有沒有傳遞',care:'從很輕開始，重點是回饋不是力度',check:'接觸瞬間腳底壓力變化'},
   {n:'發後歸位',goal:'確保發完不失結構',care:'每次發完停住三秒檢查中正',check:'重心是否還在原本的腳上'}],
- check:['發完是否仍在中正、沒有前撲','腰椎有沒有瞬間過度後仰','肩膀是否代償','錄影慢放：是由下而上，還是手臂單獨完成'],
- pre:['zheng','song'],next:['tuishou','hua'],
- warn:'發勁在沒有人看的情況下自學，最常見的結果是練出「用腰椎甩」的模式，短期看不出來，長期是腰傷。這一節建議先把整勁做到位，並找人定期檢查。'},
 
-{id:'tuishou',n:'推手',st:2,lv:4,
+ cond:['可單練','可搭配沙包／靶','雙人測試更容易驗證'], verify:['是否主要靠肩臂局部出力','發力前是否需要明顯蓄力','力量是否能從腳、胯、軀幹傳到手','發力後自身結構是否散掉'],
+ pre:['zheng','song'],next:['tuishou','hua']},
+
+{id:'tuishou',n:'推手',st:2,
  what:'兩人保持接觸、在不脫離的前提下互相試探與控制的練習。推手<b>不是比誰推得倒誰</b>，而是在接觸中檢驗自己的結構、聽勁與化勁是否成立。',
  train:['接觸中維持自己的中正與虛實','不丟（不脫離接觸）不頂（不硬抗）','讀出對方的方向與時機','把八法用在真實的互動裡'],
  why:'推手是整個系統的檢驗場。前面所有節點練得對不對，在推手裡三分鐘就會揭曉。',
@@ -11457,11 +11482,11 @@ var TJ_NODES=[
   {n:'定步單推手',goal:'最基本的接觸循環',care:'固定腳步，只練手臂與腰胯的循環',check:'接觸點壓力是否始終穩定'},
   {n:'定步四正推手',goal:'把掤捋擠按用進互動',care:'速度放慢，先求循環不斷',check:'四個法之間有沒有斷點'},
   {n:'活步推手',goal:'加入步法',care:'必須先有定步的基礎',check:'移動時中正有沒有丟掉'}],
- check:['被壓時胯還轉不轉得動','有沒有出現頂或丟','自己的重心在哪，說得出來嗎','結束後是手臂痠還是腿痠——手臂痠代表在用手'],
- pre:['tuishou_dep'],next:['ting','hua'],
- warn:'推手需要對象與即時回饋，看影片只能建立概念，無法建立能力。找不到對象時，把時間投回鬆沉與整勁的效益更高。'},
 
-{id:'ting',n:'聽勁',st:2,lv:4,
+ cond:['需雙人','需要持續接觸'], verify:['能否感覺對方重心變化','接觸時自己是否立刻僵住','能否維持中定','是否只靠手臂推拉','能否在不丟失自身結構下化解來力'],
+ pre:['tuishou_dep'],next:['ting','hua']},
+
+{id:'ting',n:'聽勁',st:2,
  what:'透過接觸點感知對方的方向、力度與時機。「聽」用的是觸覺與本體感覺，不是耳朵。它是化勁與後續一切應用的輸入端。',
  train:['在接觸中維持極低張力（張力越大越聽不到）','分辨對方力的方向與大小變化','察覺對方重心的位置','反應的時機而不是反應的力度'],
  why:'沒有聽勁，化勁就只是猜；有聽勁，才談得上「捨己從人」。',
@@ -11471,11 +11496,11 @@ var TJ_NODES=[
  drill:[
   {n:'閉眼單手接觸',goal:'去掉視覺，逼出觸覺',care:'需要同伴，緩慢移動，只求說出方向',check:'方向判斷的正確率'},
   {n:'極輕接觸循環',goal:'把接觸壓力降到最低仍不脫離',care:'壓力小到像貼著一張紙',check:'有沒有不自覺加壓'}],
- check:['接觸時能否描述對方力的方向','自己手臂的張力是不是可以再降低','是不是總在對方動完之後才反應'],
- pre:['tuishou'],next:['hua'],
- warn:'完全無法自學。沒有接觸對象時，這一節只能建立概念。'},
 
-{id:'hua',n:'化勁',st:2,lv:4,
+ cond:['需雙人','需要極低張力的持續接觸','可閉眼進行以去掉視覺'], verify:['接觸時能否描述對方力的方向','自己手臂的張力是不是可以再降低','是不是總在對方動完之後才反應'],
+ pre:['tuishou'],next:['hua']},
+
+{id:'hua',n:'化勁',st:2,
  what:'在接觸中改變對方力量的方向，使其落空，而不是用力抵抗。化的物理基礎是圓轉與重心轉移——把直線來力導成弧線。',
  train:['接觸點不頂不丟的前提下改變角度','用胯與步法而不是手臂完成化','化完之後仍保有自己的結構與位置','時機——太早對方會改變，太晚已經被壓實'],
  why:'化勁是太極「以柔克剛」的具體操作。它是推手的核心技術，也是技擊應用的前提。',
@@ -11485,11 +11510,11 @@ var TJ_NODES=[
  drill:[
   {n:'定步走化',goal:'在不移步的條件下用胯完成化',care:'腳不動，只用胯與軀幹旋轉',check:'化完重心是否還在原腳'},
   {n:'單推手加化',goal:'把化放進循環裡',care:'速度慢、幅度小',check:'對方是不是真的落空了'}],
- check:['化完後自己是否仍中正','是手在做還是胯在做','有沒有變成單純後退'],
- pre:['ting'],next:['qinna','jiji'],
- warn:'完全無法自學。'},
 
-{id:'qinna',n:'擒拿',st:2,lv:4,
+ cond:['需雙人','需要接觸','定步先於活步'], verify:['化完後自己是否仍中正','是手在做還是胯在做','有沒有變成單純後退'],
+ pre:['ting'],next:['qinna','jiji']},
+
+{id:'qinna',n:'擒拿',st:2,
  what:'利用關節活動範圍的限制進行控制的技術。太極的擒拿多與化勁、纏絲結合，強調在接觸與旋轉中順勢完成，而不是靠力氣扭。',
  train:['關節結構與活動範圍的認識','在接觸中順勢取位','控制而非傷害的分寸'],
  why:'擒拿是化勁之後的其中一條出口，也是理解「順人之勢」的具體案例。',
@@ -11497,11 +11522,11 @@ var TJ_NODES=[
  judge:['是靠角度取得控制，還是靠力量','對方能不能輕易解脫','自己的結構在施技時有沒有散掉'],
  err:['用蠻力扭轉關節','在沒有安全共識下練習','拿人時自己重心先浮起來'],
  drill:[{n:'關節活動範圍認識',goal:'先知道界線在哪',care:'必須極慢、必須有拍擊示意的約定',check:'對方是否隨時能表達停止'}],
- check:['是否靠角度而非力量','有沒有安全訊號機制','自己重心是否穩定'],
- pre:['hua'],next:['jiji'],
- warn:'具受傷風險。必須在有經驗的指導者與有安全共識的對象下練習，禁止依影片自行嘗試。'},
 
-{id:'jiji',n:'技擊應用',st:2,lv:4,
+ cond:['需雙人','需事先約定拍擊停止訊號','務必極慢'], verify:['是否靠角度而非力量','有沒有安全訊號機制','自己重心是否穩定'],
+ pre:['hua'],next:['jiji']},
+
+{id:'jiji',n:'技擊應用',st:2,
  what:'把前面所有能力用在有對抗性的情境中。太極的技擊源流是真的（陳家溝、綿拳、沾黏連隨），但從套路到技擊之間，需要的是大量的對抗性練習，不是更多的套路。',
  train:['在壓力與速度下仍維持結構','距離、時機與角度的判斷','由推手過渡到有阻力的對練'],
  why:'這是整套系統的終點之一，但對絕大多數以養生為目的的人來說並非必要。誠實地說：不練這一段，太極的健康效益完全不打折。',
@@ -11509,9 +11534,9 @@ var TJ_NODES=[
  judge:['在有速度與阻力時，前面的結構還在不在','是回到本能亂打，還是還能用八法'],
  err:['以為套路熟了就有技擊能力','把配合式的示範當成實戰驗證','相信不接觸就能發人的說法'],
  drill:[{n:'漸進阻力對練',goal:'把合作式練習慢慢加入阻力',care:'必須有護具與明確規則',check:'阻力提高後結構還剩幾成'}],
- check:['壓力下結構是否還在','能不能說出剛才用的是哪一法'],
- pre:['jiji_dep'],next:[],
- warn:'需要有資格的指導者、合適的對象與安全裝備。網路上大量「隔空發人」「不接觸即倒」的示範不具備任何檢驗價值，請不要以此判斷一位老師。'}
+
+ cond:['需雙人','需護具與規則','需要能漸進調整阻力的對象'], verify:['壓力下結構是否還在','能不能說出剛才用的是哪一法'],
+ pre:['jiji_dep'],next:[]}
 ];
 /* 依賴修補：推手與技擊的前置節點 */
 TJ_NODES.forEach(function(x){
@@ -11519,48 +11544,85 @@ TJ_NODES.forEach(function(x){
   if(x.id==='jiji') x.pre=['hua','fajin'];
 });
 
+/* ===== 老師：只記「他的內容適合補哪一塊」，不做誰比較好的評比 =====
+   channels 為已確認可開啟的官方頻道；要新增老師就往這裡加一筆。 */
 var TJ_TEACHERS=[
- {id:'凌音',pos:['太極','太乙游龍拳','傳統武術基本功','八法五步','套路'],
-  use:'基本功、動作拆解、套路跟練。',
-  fit:'第一階段的外形與套路節點（步法、八法五步、套路整合）。',
-  plat:['Facebook','Bilibili'],note:'實際連結待補'},
- {id:'沅芷',pos:['太極基本功','楊式','陳式','樁功','身法','纏絲'],
-  use:'身法、套路、基礎結構與太極動作理解。',
-  fit:'身形與中正、樁功、圓轉與纏絲、腰胯協調。',
-  plat:['Facebook','Bilibili'],note:'實際連結待補'},
- {id:'黃正斌',pos:['黃性賢系','鬆身','內勁','發勁','推手','擒拿'],
-  use:'中後階段的鬆沉、內勁、發勁、推手與應用。',
-  fit:'鬆沉、整勁、發勁、推手、擒拿。',
-  plat:['YouTube','Facebook'],note:'實際連結待補。推手、聽勁、化勁與高階發勁不建議只靠錄播影片學習。'}
+ {id:'凌音',
+  see:['武術基本功','柔軟與活動度','步法','八法五步','太極十三式','二十四式','太乙游龍拳','太極劍','發力與身法示範'],
+  use:'動作拆解、套路跟練、傳統武術基本功。',
+  fit:['prep','step','bafa','form','circle'],
+  channels:[],
+  note:'本站目前<b>沒有</b>可驗證的公開影片連結。搜尋只找到一個同名個人臉書帳號，無法從本機開啟確認，因此不列入。請把你平常看的頁面或影片網址給我，我再補進資料層。'},
+ {id:'沅芷',
+  see:['身形','樁功','鬆沉','開胯','身法','纏絲','圓轉','楊式','陳式','套路','太極基本功'],
+  use:'身體結構、基本功、太極身法、纏絲與套路。',
+  fit:['body','zhuang','song','kua','circle','form'],
+  channels:[
+   {name:'太极传承-沅芷',platform:'Bilibili',url:'https://space.bilibili.com/2100491909/',status:'active'},
+   {name:'太极沅芷',platform:'YouTube',url:'https://www.youtube.com/channel/UCy_PkgjbYfNfNlmP7YIifPw',status:'active'},
+   {name:'沅芷教太极',platform:'YouTube',url:'https://www.youtube.com/@user-yuanzhiteaching',status:'active'}],
+  note:'Bilibili 是目前內容最完整的一站。YouTube 兩個頻道以短片與演練片段為主，系統性教學較少。'},
+ {id:'黃正斌',
+  see:['黃性賢系（黃式太極）','鬆身','內勁','發勁','推手','擒拿','太極應用','白鶴拳'],
+  use:'中後段的鬆沉、內勁、發勁、推手與應用。',
+  fit:['song','zheng','fajin','tuishou','qinna'],
+  channels:[
+   {name:'黃正斌 (@JengbinHuang)',platform:'YouTube',url:'https://www.youtube.com/c/JengbinHuang',status:'active'}],
+  note:'頻道自述為「黃式太極第三代傳人黃正斌(Richard Huang)師父之武學天地」。他另有付費套課，<b>不列入本頁學習路線</b>，本頁只收公開免費內容。'}
 ];
 
-/* 教材資料：url 留空、status:'pending' 表示尚未填入實際連結。
-   新增一支影片＝往這個陣列加一筆；topics 用 TJ_NODES 的 id。 */
+/* ===== 教材 =====
+   status: 'active'   = 已實際開啟確認可看
+           'unverified'= 連結來自搜尋索引、本機無法開啟驗證（卡片會標示）
+           'pending'   = 尚無連結
+   topics 用 TJ_NODES 的 id；form 只在屬於套路時填。 */
 var TJ_MEDIA=[
- {teacher:'凌音',title:'八法五步完整教學',level:'beginner',type:'tutorial',
-  topics:['bafa','step'],platform:'Facebook',url:'',free:true,status:'pending'},
- {teacher:'凌音',title:'傳統武術基本功（步法拆解）',level:'beginner',type:'tutorial',
-  topics:['step','prep'],platform:'Bilibili',url:'',free:true,status:'pending'},
- {teacher:'凌音',title:'太乙游龍拳套路跟練',level:'intermediate',type:'follow',
-  topics:['form','circle'],platform:'Bilibili',url:'',free:true,status:'pending'},
- {teacher:'沅芷',title:'太極基本功・站樁',level:'beginner',type:'tutorial',
-  topics:['zhuang','body'],platform:'Facebook',url:'',free:true,status:'pending'},
- {teacher:'沅芷',title:'身法要領拆解',level:'beginner',type:'tutorial',
-  topics:['body','kua'],platform:'Facebook',url:'',free:true,status:'pending'},
- {teacher:'沅芷',title:'陳式纏絲勁入門',level:'intermediate',type:'tutorial',
-  topics:['circle','kua'],platform:'Bilibili',url:'',free:true,status:'pending'},
- {teacher:'沅芷',title:'楊式套路跟練',level:'beginner',type:'follow',
-  topics:['form'],platform:'Bilibili',url:'',free:true,status:'pending'},
- {teacher:'黃正斌',title:'鬆身法示範與說明',level:'intermediate',type:'tutorial',
-  topics:['song'],platform:'YouTube',url:'',free:true,status:'pending'},
- {teacher:'黃正斌',title:'內勁與整體傳遞',level:'advanced',type:'lecture',
-  topics:['zheng','song'],platform:'YouTube',url:'',free:true,status:'pending'},
- {teacher:'黃正斌',title:'發勁原理講解',level:'advanced',type:'lecture',
-  topics:['fajin','zheng'],platform:'YouTube',url:'',free:true,status:'pending'},
- {teacher:'黃正斌',title:'推手基本練法',level:'advanced',type:'tutorial',
-  topics:['tuishou','ting'],platform:'YouTube',url:'',free:true,status:'pending'},
- {teacher:'黃正斌',title:'擒拿應用示範',level:'advanced',type:'demo',
-  topics:['qinna','hua'],platform:'YouTube',url:'',free:true,status:'pending'}
+ {id:'yz-24-full',teacher:'沅芷',title:'24式太极拳完整版教学',platform:'Bilibili',
+  url:'https://www.bilibili.com/video/BV1vM411q78L/',level:'beginner',contentType:'完整教學',
+  topics:['form','step','body'],form:'二十四式',free:true,recommended:true,status:'active',
+  description:'把二十四式從頭到尾走一遍的教學版本。',
+  whyUseful:'用來確認二十四式的動作順序與定式位置；忘記接下來哪一式時回來看這支最快。'},
+ {id:'yz-24-champ',teacher:'沅芷',title:'全国冠军手把手教你24式简化太极拳',platform:'Bilibili',
+  url:'https://www.bilibili.com/video/BV1bw411G7xe/',level:'beginner',contentType:'動作拆解',
+  topics:['form','step'],form:'二十四式',free:true,recommended:true,status:'active',
+  description:'以拆解口吻帶二十四式，節奏較快的濃縮版。',
+  whyUseful:'和上面那支互補——這支看整體節奏與重心轉換的時機，不是看手的位置。'},
+ {id:'yz-fajin',teacher:'沅芷',title:'沅芷老师太极拳发力精彩合集',platform:'Bilibili',
+  url:'https://www.bilibili.com/video/BV13T411Y7Jq/',level:'intermediate',contentType:'發勁示範',
+  topics:['fajin','zheng'],form:'',free:true,recommended:true,status:'active',
+  description:'多段發力動作的剪輯合集，示範為主、無逐步講解。',
+  whyUseful:'看發力瞬間<b>腳與胯先動</b>的順序，以及發完之後身體怎麼回到中正。當作動作參考而不是教學。'},
+ {id:'yz-zhongzheng',teacher:'沅芷',title:'太极拳立身中正安舒，以腰为轴，动作发力如行云流水',platform:'Bilibili',
+  url:'https://www.bilibili.com/video/BV1jk4y1W79S/',level:'beginner',contentType:'原理解說',
+  topics:['body','kua'],form:'',free:true,recommended:true,status:'active',
+  description:'短片，講立身中正與以腰為軸的關係。',
+  whyUseful:'複習中正與腰胯這兩節時的快速提醒，不到一分鐘可以看完。'},
+
+ {id:'hzb-school',teacher:'黃正斌',title:'黃式太極黃正斌師父(Richard Huang)武館招生影片',platform:'YouTube',
+  url:'https://www.youtube.com/watch?v=DkgZZQMjGsY',level:'beginner',contentType:'示範',
+  topics:['song','tuishou'],form:'黃性賢系',free:true,recommended:false,status:'unverified',
+  description:'武館介紹性質的綜合示範片。',
+  whyUseful:'快速看黃式一系的整體風格與鬆身取向，判斷值不值得往下看他其他內容。'},
+ {id:'hzb-wc2014',teacher:'黃正斌',title:'2014年世界盃開幕表演太極拳運用',platform:'YouTube',
+  url:'https://www.youtube.com/watch?v=zMHed_RFWMo',level:'intermediate',contentType:'技擊應用',
+  topics:['fajin','tuishou','jiji'],form:'黃性賢系',free:true,recommended:false,status:'unverified',
+  description:'公開場合的太極應用表演。',
+  whyUseful:'表演性質，看招式怎麼從套路轉成應用形態；注意這是配合式示範，不是對抗驗證。'},
+ {id:'hzb-itv2009',teacher:'黃正斌',title:'2009年接受武術大會專訪之2',platform:'YouTube',
+  url:'https://www.youtube.com/watch?v=owUROLdukho',level:'intermediate',contentType:'原理解說',
+  topics:['song','zheng'],form:'黃性賢系',free:true,recommended:false,status:'unverified',
+  description:'訪談形式，談黃式一系的練法與觀念。',
+  whyUseful:'聽他自己怎麼描述鬆與內勁，拿來跟本頁「傳統術語與現代解讀」那一節對照。'},
+ {id:'hzb-spine',teacher:'黃正斌',title:'Stretch the Spine | Feel the Energy | Master Richard Huang',platform:'YouTube',
+  url:'https://www.youtube.com/watch?v=5LKV2G_dI6M',level:'beginner',contentType:'基本功',
+  topics:['body','song'],form:'黃性賢系',free:true,recommended:false,status:'unverified',
+  description:'脊柱伸展相關的鬆身練習片段。',
+  whyUseful:'鬆身法一路的入門動作，可以直接跟著做，對照本站「身形與中正」的貼牆站立。'},
+ {id:'hzb-whitecrane',teacher:'黃正斌',title:'White Crane Kung Fu forms demonstrated by Master Richard Huang',platform:'YouTube',
+  url:'https://www.youtube.com/watch?v=HsMCLWTXD_Y',level:'advanced',contentType:'示範',
+  topics:['jiji'],form:'',free:true,recommended:false,status:'unverified',
+  description:'白鶴拳套路演示（非太極）。',
+  whyUseful:'黃式一系的外家背景參考。與太極路線無直接關係，列此僅供辨識他的完整武學來歷。'}
 ];
 </script>
 <script>
@@ -11569,36 +11631,32 @@ var TJ_MEDIA=[
   if(!document.getElementById('tj-map-box')) return;
   var NI={}; TJ_NODES.forEach(function(n,i){ NI[n.id]=n; n._i=i; });
   var ST=['未開始','學習中','已完成','需複習'], SC=['s0','s1','s2','s3'], SM=['○','●','✓','↻'];
+  var LVL={beginner:'初階',intermediate:'中階',advanced:'進階'};
 
-  /* --- 進度儲存：能用就用 localStorage，不能用就退回本次瀏覽期間記憶體 --- */
-  var mem={}, canStore=false;
-  try{ var k='__tj'; window.localStorage.setItem(k,'1'); window.localStorage.removeItem(k); canStore=true; }catch(e){ canStore=false; }
+  /* --- 儲存：進度與筆記。能寫 localStorage 就寫，不能就退回記憶體 --- */
+  var mem={p:{},n:{}}, canStore=false;
+  try{ var k='__tj'; window.localStorage.setItem(k,'1'); window.localStorage.removeItem(k); canStore=true; }catch(e){}
   function load(){
     if(!canStore) return mem;
-    try{ return JSON.parse(window.localStorage.getItem('tj-prog')||'{}'); }catch(e){ return {}; }
+    try{ var o=JSON.parse(window.localStorage.getItem('tj-store')||'null'); return o&&o.p?o:{p:{},n:{}}; }catch(e){ return {p:{},n:{}}; }
   }
-  function save(o){
-    mem=o;
-    if(!canStore) return;
-    try{ window.localStorage.setItem('tj-prog', JSON.stringify(o)); }catch(e){}
-  }
-  var P=load();
-  function st(id){ return P[id]||0; }
-  function setSt(id,v){ P[id]=v; save(P); renderAll(); }
+  function save(){ mem=D; if(!canStore) return; try{ window.localStorage.setItem('tj-store',JSON.stringify(D)); }catch(e){} }
+  var D=load();
+  function st(id){ return D.p[id]||0; }
+  function setSt(id,v){ D.p[id]=v; save(); renderMap(); renderProg(); }
+  function note(id){ return D.n[id]||''; }
 
   /* --- 學習地圖 --- */
   function chip(n){
     var s=st(n.id);
-    return '<button class="tj-chip '+SC[s]+'" data-n="'+n.id+'" title="'+TJ_LV[n.lv].t+'">'
-      +'<i class="tj-dot '+TJ_LV[n.lv].c+'"></i>'+n.n+'<b class="tj-st">'+SM[s]+'</b></button>';
+    return '<button class="tj-chip '+SC[s]+'" data-n="'+n.id+'">'+n.n+'<b class="tj-st">'+SM[s]+'</b></button>';
   }
   function renderMap(){
     var h='';
     TJ_STAGES.forEach(function(g,gi){
       var ns=TJ_NODES.filter(function(n){return n.st===gi});
       var done=ns.filter(function(n){return st(n.id)===2}).length;
-      h+='<div class="tj-stage"><div class="tj-stage-h"><b>'+g.n+'</b>'
-        +'<span class="tj-stage-c">'+done+' / '+ns.length+'</span></div>'
+      h+='<div class="tj-stage"><div class="tj-stage-h"><b>'+g.n+'</b><span class="tj-stage-c">'+done+' / '+ns.length+'</span></div>'
         +'<div class="tj-stage-q">核心問題：'+g.q+'</div>'
         +'<div class="tj-chips">'+ns.map(chip).join('<span class="tj-arr">›</span>')+'</div>'
         +'<div class="tj-stage-d">'+g.d+'</div></div>';
@@ -11607,166 +11665,180 @@ var TJ_MEDIA=[
     document.getElementById('tj-map-box').innerHTML=h;
   }
 
+  /* --- 教材卡 --- */
+  function card(m){
+    var live=!!m.url, un=(m.status==='unverified');
+    var tp=m.topics.map(function(t){return NI[t]?NI[t].n:t});
+    if(m.form) tp.push(m.form);
+    return '<div class="tj-mcard'+(live?'':' pend')+'">'
+      +'<div class="tj-mhead"><span class="pill">'+m.teacher+'</span>'
+      +'<span class="tj-tag">'+(LVL[m.level]||m.level)+'</span>'
+      +'<span class="tj-tag">'+m.contentType+'</span>'
+      +'<span class="tj-tag">'+m.platform+'</span>'
+      +(un?'<span class="tj-tag pend" title="連結取自搜尋索引，本機環境無法開啟驗證">未驗證</span>':'')
+      +(m.recommended?'<span class="tj-tag rec">精選</span>':'')+'</div>'
+      +'<div class="tj-mt">'+m.title+'</div>'
+      +'<div class="tj-mtopics">'+tp.join('｜')+'</div>'
+      +'<div class="tj-mdesc">'+m.description+'</div>'
+      +'<div class="tj-mwhy"><b>為什麼值得回來看：</b>'+m.whyUseful+'</div>'
+      +(live?'<a class="fx-btn tj-watch" href="'+m.url+'" target="_blank" rel="noopener">觀看原影片 ↗</a>'
+            :'<span class="fx-btn tj-watch off">連結待補</span>')
+      +'</div>';
+  }
+  function mediaFor(id){
+    var all=TJ_MEDIA.filter(function(x){ return x.topics.indexOf(id)>=0; });
+    if(!all.length){
+      var ts=TJ_TEACHERS.filter(function(t){ return t.fit.indexOf(id)>=0 && t.channels.length; });
+      if(!ts.length) ts=TJ_TEACHERS.filter(function(t){ return t.channels.length; });
+      var ch=[]; ts.forEach(function(t){ t.channels.forEach(function(c){
+        ch.push('<a href="'+c.url+'" target="_blank" rel="noopener">'+t.id+'｜'+c.name+'（'+c.platform+'）↗</a>'); }); });
+      return '<p class="tj-dim">此節點目前<b>缺優質免費教材</b>，沒有硬湊。'
+        +(ch.length?'可以先從這幾個頻道自己找起：<br>'+ch.join('　'):'')+'</p>';
+    }
+    var rec=all.filter(function(x){return x.recommended}), rest=all.filter(function(x){return !x.recommended});
+    if(rec.length<3){ rest.slice(0,3-rec.length).forEach(function(x){ rec.push(x); }); rest=rest.filter(function(x){return rec.indexOf(x)<0}); }
+    rec=rec.slice(0,5);
+    var h='<div class="tj-mlist">'+rec.map(card).join('')+'</div>';
+    if(rest.length) h+='<details class="tj-more"><summary>更多教材（'+rest.length+'）</summary><div class="tj-mlist">'+rest.map(card).join('')+'</div></details>';
+    return h;
+  }
+
   /* --- 節點內容 --- */
   function ul(a){ return '<ul class="tj-ul">'+a.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'; }
-  function lvBadge(n){
-    var L=TJ_LV[n.lv];
-    return '<span class="tj-lvb '+L.c+'"><i class="tj-dot '+L.c+'"></i>'+L.t+'</span>';
-  }
   function link(id){ return NI[id]?'<a href="javascript:void(0)" class="tj-link" data-n="'+id+'">'+NI[id].n+'</a>':id; }
-  function mediaFor(id){
-    var m=TJ_MEDIA.filter(function(x){ return x.topics.indexOf(id)>=0; });
-    if(!m.length) return '<p class="tj-dim">目前尚無對應教材。</p>';
-    return '<div class="tj-mlist">'+m.map(card).join('')+'</div>';
-  }
-  function card(m){
-    var pend=!m.url;
-    return '<div class="tj-mcard'+(pend?' pend':'')+'">'
-      +'<div class="tj-mt">'+(pend?m.title:'<a href="'+m.url+'" target="_blank" rel="noopener">'+m.title+'</a>')+'</div>'
-      +'<div class="tj-mmeta"><span class="pill">'+m.teacher+'</span>'
-      +'<span class="tj-tag">'+({beginner:'初階',intermediate:'中階',advanced:'進階'}[m.level]||m.level)+'</span>'
-      +'<span class="tj-tag">'+m.platform+'</span>'
-      +'<span class="tj-tag">'+(m.free?'免費':'付費')+'</span>'
-      +(pend?'<span class="tj-tag pend">連結待補</span>':'')+'</div>'
-      +'<div class="tj-mtopics">'+m.topics.map(function(t){return NI[t]?NI[t].n:t}).join('・')+'</div></div>';
-  }
   function renderNode(id){
     var n=NI[id]; if(!n) return;
     var box=document.getElementById('tj-node'); box.style.display='block';
     var h='<div class="tj-nh"><div><span class="tj-stage-tag">'+TJ_STAGES[n.st].n.split('｜')[1]+'</span>'
-      +'<h4 class="tj-ntitle">'+n.n+'</h4></div><div>'+lvBadge(n)+'</div></div>';
-    h+='<div class="tj-sect"><b>1・這是什麼</b><p>'+n.what+'</p></div>';
-    h+='<div class="tj-sect"><b>2・這一階段真正要練什麼</b>'+ul(n.train)+'</div>';
-    h+='<div class="tj-sect"><b>3・為什麼重要</b><p>'+n.why+'</p><p class="tj-chain">'+n.chain+'</p></div>';
-    h+='<div class="tj-sect tj-judge"><b>4・判斷重點</b><p class="tj-dim">不只是怎麼做，而是怎麼知道自己做對沒有。</p>'+ul(n.judge)+'</div>';
-    h+='<div class="tj-sect tj-err"><b>5・常見錯誤</b>'+ul(n.err)+'</div>';
-    h+='<div class="tj-sect"><b>6・練習方法</b><table class="tj-dt"><tr><th style="width:26%">練習</th><th>目的</th><th>注意事項</th><th>自我檢查</th></tr>'
-      +n.drill.map(function(d){return '<tr><td><b>'+d.n+'</b></td><td>'+d.goal+'</td><td>'+d.care+'</td><td>'+d.check+'</td></tr>'}).join('')
-      +'</table></div>';
-    h+='<div class="tj-sect tj-self"><b>7・自我檢查</b><p class="tj-dim">練完之後照這幾條問自己一次，答不出來就是還沒到。</p>'+ul(n.check)+'</div>';
-    if(n.term) h+='<div class="tj-sect tj-term"><b>傳統術語 vs 現代可觀察現象</b>'
-      +'<p><b>傳統描述：</b>'+n.term.trad+'</p>'
-      +'<p><b>可觀察層面：</b>'+n.term.obs.join('、')+'</p>'
-      +'<p><b>主觀感受（傳統體感，保留但不當作機制）：</b>'+n.term.feel.join('、')+'</p>'
-      +'<p class="tj-no"><b>不要過度延伸：</b>'+n.term.no+'</p></div>';
-    if(n.warn) h+='<div class="warn note"><b>安全與學習方式提醒：</b>'+n.warn+'</div>';
-    h+='<div class="tj-sect"><b>8・先修與接下來</b><p><b>先學：</b>'
-      +(n.pre.length?n.pre.map(link).join('、'):'無（這是起點）')+'　　<b>再學：</b>'
-      +(n.next.length?n.next.map(link).join('、'):'無（這是終點）')+'</p></div>';
-    h+='<div class="tj-sect"><b>我的進度</b><div class="tj-btns">'
-      +ST.map(function(s,i){return '<button class="fx-btn tj-set'+(st(id)===i?' on':'')+'" data-n="'+id+'" data-v="'+i+'">'+s+'</button>'}).join('')
-      +'</div></div>';
-    h+='<div class="tj-sect"><b>對應免費教材</b><p class="tj-dim">影片是最後一層輔助——先讀完上面的判斷重點與常見錯誤，再帶著問題去看。</p>'+mediaFor(id)+'</div>';
+      +'<h4 class="tj-ntitle" data-cur="'+id+'">'+n.n+'</h4></div>'
+      +'<div class="tj-btns">'+ST.map(function(s,i){return '<button class="fx-btn tj-set'+(st(id)===i?' on':'')+'" data-n="'+id+'" data-v="'+i+'">'+s+'</button>'}).join('')+'</div></div>';
+    h+='<div class="tj-sect"><b>這是什麼</b><p>'+n.what+'</p></div>';
+    h+='<div class="tj-sect"><b>核心原理</b><p>'+n.why+'</p><p class="tj-dim" style="margin-top:6px">這一節實際在處理的是：</p>'+ul(n.train)+'<p class="tj-chain">'+n.chain+'</p></div>';
+    h+='<div class="tj-sect tj-judge"><b>判斷重點</b>'+ul(n.judge)+'</div>';
+    h+='<div class="tj-sect tj-err"><b>常見錯誤</b>'+ul(n.err)+'</div>';
+    h+='<div class="tj-sect"><b>練習方法</b><table class="tj-dt"><tr><th style="width:26%">練習</th><th>目的</th><th>注意事項</th><th>自我檢查</th></tr>'
+      +n.drill.map(function(d){return '<tr><td><b>'+d.n+'</b></td><td>'+d.goal+'</td><td>'+d.care+'</td><td>'+d.check+'</td></tr>'}).join('')+'</table></div>';
+    h+='<div class="tj-two">'
+      +'<div class="tj-sect tj-cond"><b>練習條件</b>'+ul(n.cond)+'</div>'
+      +'<div class="tj-sect tj-verify"><b>驗證方式</b><p class="tj-dim">怎麼知道練到的是這個東西，而不是只有外形相似。</p>'+ul(n.verify)+'</div></div>';
+    if(n.term) h+='<div class="tj-sect tj-term"><b>傳統術語與現代解讀</b>'
+      +'<p><b>傳統怎麼描述：</b>'+n.term.trad+'</p>'
+      +'<p><b>實際可以觀察到什麼：</b>'+n.term.obs.join('、')+'</p>'
+      +'<p><b>主觀體感（傳統語言，保留）：</b>'+n.term.feel.join('、')+'</p>'
+      +'<p class="tj-no"><b>屬於後人的理論解釋、不要當成已證實：</b>'+n.term.no+'</p></div>';
+    h+='<div class="tj-sect"><b>免費教材</b>'+mediaFor(id)+'</div>';
+    h+='<div class="tj-sect"><b>相關節點</b><p><b>先學：</b>'
+      +(n.pre.length?n.pre.map(link).join('、'):'—')+'　　<b>接著：</b>'
+      +(n.next.length?n.next.map(link).join('、'):'—')+'</p></div>';
+    h+='<div class="tj-sect tj-notes"><b>我的筆記</b>'
+      +'<textarea id="tj-note" data-n="'+id+'" rows="4" placeholder="今天哪裡卡住／哪個老師的說法比較有感／下次實體課要問什麼／哪支影片值得重看">'
+      +note(id).replace(/</g,'&lt;')+'</textarea>'
+      +'<div class="tj-noteline"><button class="fx-btn tj-nsave" data-n="'+id+'">儲存筆記</button><span id="tj-nmsg" class="tj-dim"></span></div></div>';
     box.innerHTML=h;
   }
 
-  /* --- 進度與今日推薦 --- */
+  /* --- 進度與今日 --- */
   function renderProg(){
     var done=TJ_NODES.filter(function(n){return st(n.id)===2}).length;
     var pct=Math.round(done/TJ_NODES.length*100);
-    var h='<div class="tj-bar"><div class="tj-bar-in" style="width:'+pct+'%"></div></div>'
-      +'<div class="tj-progline">已完成 <b>'+done+'</b> / '+TJ_NODES.length+' 個能力節點（'+pct+'%）　'
-      +ST.map(function(s,i){return '<span class="tj-tag '+SC[i]+'">'+SM[i]+' '+s+' '+TJ_NODES.filter(function(n){return st(n.id)===i}).length+'</span>'}).join('')
-      +'</div><div class="tj-mini">'
-      +TJ_NODES.map(function(n){return '<span class="tj-mini-i '+SC[st(n.id)]+'" data-n="'+n.id+'">'+n.n+' '+SM[st(n.id)]+'</span>'}).join('')
-      +'</div>';
-    document.getElementById('tj-prog').innerHTML=h;
-
-    var list=TJ_NODES.map(function(n){
-      return '<tr><td>'+link(n.id)+'</td><td><i class="tj-dot '+TJ_LV[n.lv].c+'"></i></td><td>'
-        +ST.map(function(s,i){return '<button class="fx-btn tj-set'+(st(n.id)===i?' on':'')+'" data-n="'+n.id+'" data-v="'+i+'">'+s+'</button>'}).join('')
-        +'</td></tr>';
-    }).join('');
-    document.getElementById('tj-prog-list').innerHTML='<table class="tj-dt"><tr><th style="width:130px">節點</th><th style="width:40px">自學</th><th>進度</th></tr>'+list+'</table>';
-
+    document.getElementById('tj-prog').innerHTML=
+      '<div class="tj-bar"><div class="tj-bar-in" style="width:'+pct+'%"></div></div>'
+      +'<div class="tj-progline">已完成 <b>'+done+'</b> / '+TJ_NODES.length+'（'+pct+'%）　'
+      +ST.map(function(s,i){return '<span class="tj-tag '+SC[i]+'">'+SM[i]+' '+s+' '+TJ_NODES.filter(function(n){return st(n.id)===i}).length+'</span>'}).join('')+'</div>'
+      +'<div class="tj-mini">'+TJ_NODES.map(function(n){
+          return '<span class="tj-mini-i '+SC[st(n.id)]+'" data-n="'+n.id+'">'+n.n+' '+SM[st(n.id)]
+            +(note(n.id)?'<i class="tj-hasnote" title="有筆記">✎</i>':'')+'</span>'}).join('')+'</div>';
+    document.getElementById('tj-prog-list').innerHTML='<table class="tj-dt"><tr><th style="width:140px">節點</th><th>進度</th></tr>'
+      +TJ_NODES.map(function(n){return '<tr><td>'+link(n.id)+'</td><td>'
+        +ST.map(function(s,i){return '<button class="fx-btn tj-set'+(st(n.id)===i?' on':'')+'" data-n="'+n.id+'" data-v="'+i+'">'+s+'</button>'}).join('')+'</td></tr>'}).join('')+'</table>';
     document.getElementById('tj-store-note').innerHTML= canStore
-      ? '進度存在這台裝置的瀏覽器裡（localStorage），不會上傳、也沒有帳號。換裝置或清除瀏覽資料就會歸零。'
-      : '目前環境不允許瀏覽器儲存，進度只保留在這次瀏覽期間，重新整理會歸零。在正式網站上會自動改用瀏覽器儲存。';
+      ? '進度與筆記存在這台裝置的瀏覽器裡（localStorage），沒有帳號也不會上傳。換裝置或清除瀏覽資料就會歸零。'
+      : '目前環境不允許瀏覽器儲存，進度與筆記只保留在這次瀏覽期間。在正式網站上會自動改用瀏覽器儲存。';
     renderToday();
   }
   function renderToday(){
     var t=null;
     for(var i=0;i<TJ_NODES.length;i++){ if(st(TJ_NODES[i].id)!==2){ t=TJ_NODES[i]; break; } }
-    if(!t){ t=TJ_NODES.filter(function(n){return st(n.id)===3})[0]||TJ_NODES[TJ_NODES.length-1]; }
+    if(!t) t=TJ_NODES.filter(function(n){return st(n.id)===3})[0]||TJ_NODES[TJ_NODES.length-1];
     var base=t;
-    if(t.lv>=3 && t.pre.length && NI[t.pre[0]] && st(t.pre[0])!==2) base=NI[t.pre[0]];
+    if(t.cond[0].indexOf('需雙人')===0 && t.pre.length && NI[t.pre[0]] && st(t.pre[0])!==2) base=NI[t.pre[0]];
     var d=base.drill[0];
-    var med=TJ_MEDIA.filter(function(m){return m.topics.indexOf(t.id)>=0})[0]
-         || TJ_MEDIA.filter(function(m){return m.topics.indexOf(base.id)>=0})[0];
-    var h='<div class="tj-today"><div class="tj-today-h">今天可以練什麼</div>'
-      +'<div class="tj-today-g">'
-      +'<div><span class="tj-today-k">一個基礎練習</span><b>'+d.n+'</b><p>'+d.goal+'<br><span class="tj-dim">注意：'+d.care+'</span></p></div>'
-      +'<div><span class="tj-today-k">一個核心知識</span><b>'+t.n+'</b><p>'+t.judge[0]+'<br><span class="tj-dim">'+lvBadge(t)+'</span></p></div>'
-      +'<div><span class="tj-today-k">一支免費教材</span><b>'+(med?med.teacher+'｜'+med.title:'（此節點尚無教材）')+'</b><p>'
-      +(med?(med.url?'<a href="'+med.url+'" target="_blank" rel="noopener">前往觀看</a>':'<span class="tj-dim">連結待補</span>'):'')+'</p></div>'
-      +'</div>'
-      +'<p class="tj-dim" style="margin-top:8px">推薦邏輯很簡單：取學習順序上<b>第一個還沒標記「已完成」</b>的節點；若該節點屬橙／紅級而其前置尚未完成，基礎練習改推前置節點的第一項。'
-      +'另外別忘了每日最小配方：無極樁 5 分 → 重心轉換 20 趟 → 鬆肩沉肘 10 次。</p></div>';
-    document.getElementById('tj-today-box').innerHTML=h;
+    var med=TJ_MEDIA.filter(function(m){return m.topics.indexOf(t.id)>=0 && m.url})[0]
+         || TJ_MEDIA.filter(function(m){return m.topics.indexOf(base.id)>=0 && m.url})[0];
+    document.getElementById('tj-today-box').innerHTML='<div class="tj-today"><div class="tj-today-h">今天可以練什麼</div><div class="tj-today-g">'
+      +'<div><span class="tj-today-k">一個練習</span><b>'+d.n+'</b><p>'+d.goal+'<br><span class="tj-dim">'+d.care+'</span></p></div>'
+      +'<div><span class="tj-today-k">一個判斷點</span><b>'+t.n+'</b><p>'+t.verify[0]+'<br><span class="tj-dim">練習條件：'+t.cond.join('、')+'</span></p></div>'
+      +'<div><span class="tj-today-k">一支教材</span><b>'+(med?med.teacher+'｜'+med.title:'此節點缺教材')+'</b><p>'
+      +(med?'<a href="'+med.url+'" target="_blank" rel="noopener">觀看原影片 ↗</a><br><span class="tj-dim">'+med.whyUseful+'</span>':'<span class="tj-dim">先從老師頻道自己找</span>')+'</p></div>'
+      +'</div><p class="tj-dim" style="margin-top:8px">取學習順序上第一個還沒標「已完成」的節點；若它需要雙人而前置尚未完成，練習改推前置節點。每日最小配方：無極樁 5 分 → 重心轉換 20 趟 → 鬆肩沉肘 10 次。</p></div>';
   }
 
-  /* --- 術語對照 --- */
+  /* --- 術語 --- */
   function renderTerm(){
-    var ns=TJ_NODES.filter(function(n){return n.term});
-    document.getElementById('tj-term-box').innerHTML=ns.map(function(n){
+    document.getElementById('tj-term-box').innerHTML=TJ_NODES.filter(function(n){return n.term}).map(function(n){
       return '<details><summary>'+n.term.trad+'（'+n.n+'）</summary>'
-        +'<p><b>傳統描述：</b>'+n.term.trad+'</p>'
-        +'<p><b>實際練習重點／可觀察層面：</b></p>'+ul(n.term.obs)
-        +'<p><b>主觀感受：</b>'+n.term.feel.join('、')+'</p>'
-        +'<p class="tj-no"><b>不要過度延伸：</b>'+n.term.no+'</p></details>';
+        +'<p><b>傳統怎麼描述：</b>'+n.term.trad+'</p>'
+        +'<p><b>實際可以觀察到什麼：</b></p>'+ul(n.term.obs)
+        +'<p><b>主觀體感：</b>'+n.term.feel.join('、')+'</p>'
+        +'<p class="tj-no"><b>屬於後人的理論解釋：</b>'+n.term.no+'</p></details>';
     }).join('');
   }
   /* --- 老師 --- */
   function renderTeacher(){
     document.getElementById('tj-teacher-box').innerHTML=TJ_TEACHERS.map(function(t){
       var cnt=TJ_MEDIA.filter(function(m){return m.teacher===t.id}).length;
-      return '<div class="card tj-tcard"><h4 class="tj-ntitle">'+t.id+'</h4>'
-        +'<p><b>定位：</b>'+t.pos.map(function(x){return '<span class="tj-tag">'+x+'</span>'}).join('')+'</p>'
-        +'<p><b>網站建議用途：</b>'+t.use+'</p>'
-        +'<p><b>對應節點：</b>'+t.fit+'</p>'
-        +'<p><b>平台：</b>'+t.plat.join('、')+'　<b>教材筆數：</b>'+cnt+'　<span class="tj-dim">'+t.note+'</span></p></div>';
-    }).join('')+'<div class="note"><b>要再加一位老師？</b>在資料層的 <code>TJ_TEACHERS</code> 加一筆、在 <code>TJ_MEDIA</code> 加他的教材即可，地圖、節點頁與篩選器都會自動吃到，不需要改版面。</div>';
+      return '<div class="card tj-tcard"><h4 class="tj-ntitle">'+t.id+'<span class="tj-dim" style="font-size:13px;font-weight:400">　教材 '+cnt+' 筆</span></h4>'
+        +'<p><b>主要可看：</b>'+t.see.map(function(x){return '<span class="tj-tag">'+x+'</span>'}).join('')+'</p>'
+        +'<p><b>拿來補哪一塊：</b>'+t.use+'　對應節點：'+t.fit.map(link).join('、')+'</p>'
+        +'<p><b>官方頻道：</b>'+(t.channels.length
+            ? t.channels.map(function(c){return '<a class="tj-link" href="'+c.url+'" target="_blank" rel="noopener">'+c.name+'（'+c.platform+'）↗</a>'}).join('　')
+            : '<span class="tj-dim">尚未取得</span>')+'</p>'
+        +'<p class="tj-dim">'+t.note+'</p></div>';
+    }).join('');
   }
-  /* --- 教材庫篩選 --- */
-  var F={teacher:'',level:'',topic:'',platform:'',free:''};
-  function uniq(a){ var o=[],s={}; a.forEach(function(x){ if(!s[x]){s[x]=1;o.push(x);} }); return o; }
+  /* --- 篩選 --- */
+  var F={teacher:'',topic:'',form:'',platform:'',contentType:'',level:''};
+  function uniq(a){ var o=[],s={}; a.forEach(function(x){ if(x&&!s[x]){s[x]=1;o.push(x);} }); return o; }
   function renderFilters(){
     function grp(key,label,opts,lab){
       return '<div class="tj-frow"><span class="tj-fk">'+label+'</span>'
         +'<button class="fx-btn tj-f'+(F[key]===''?' on':'')+'" data-k="'+key+'" data-v="">全部</button>'
         +opts.map(function(o){return '<button class="fx-btn tj-f'+(F[key]===o?' on':'')+'" data-k="'+key+'" data-v="'+o+'">'+(lab?lab(o):o)+'</button>'}).join('')+'</div>';
     }
-    var h=grp('teacher','依老師',uniq(TJ_MEDIA.map(function(m){return m.teacher})))
-      +grp('level','依程度',['beginner','intermediate','advanced'],function(o){return {beginner:'初階',intermediate:'中階',advanced:'進階'}[o]})
-      +grp('topic','依內容',uniq(TJ_MEDIA.reduce(function(a,m){return a.concat(m.topics)},[])),function(o){return NI[o]?NI[o].n:o})
-      +grp('platform','依平台',uniq(TJ_MEDIA.map(function(m){return m.platform})))
-      +grp('free','依價格',['free','paid'],function(o){return o==='free'?'免費':'付費'});
-    document.getElementById('tj-filters').innerHTML=h;
+    document.getElementById('tj-filters').innerHTML=
+      grp('teacher','老師',uniq(TJ_MEDIA.map(function(m){return m.teacher})))
+     +grp('topic','節點',uniq(TJ_MEDIA.reduce(function(a,m){return a.concat(m.topics)},[])),function(o){return NI[o]?NI[o].n:o})
+     +grp('form','套路',uniq(TJ_MEDIA.map(function(m){return m.form})))
+     +grp('platform','平台',uniq(TJ_MEDIA.map(function(m){return m.platform})))
+     +grp('contentType','類型',uniq(TJ_MEDIA.map(function(m){return m.contentType})))
+     +grp('level','程度',['beginner','intermediate','advanced'],function(o){return LVL[o]});
   }
   function renderMedia(){
     var m=TJ_MEDIA.filter(function(x){
-      return (!F.teacher||x.teacher===F.teacher) && (!F.level||x.level===F.level)
-        && (!F.topic||x.topics.indexOf(F.topic)>=0) && (!F.platform||x.platform===F.platform)
-        && (!F.free|| (F.free==='free'?x.free:!x.free));
+      return (!F.teacher||x.teacher===F.teacher) && (!F.topic||x.topics.indexOf(F.topic)>=0)
+        && (!F.form||x.form===F.form) && (!F.platform||x.platform===F.platform)
+        && (!F.contentType||x.contentType===F.contentType) && (!F.level||x.level===F.level);
     });
-    document.getElementById('tj-media-box').innerHTML=
-      '<p class="tj-dim" style="margin:10px 0 6px">符合 '+m.length+' 筆</p>'
+    document.getElementById('tj-media-box').innerHTML='<p class="tj-dim" style="margin:10px 0 6px">符合 '+m.length+' 筆</p>'
       +(m.length?'<div class="tj-mlist">'+m.map(card).join('')+'</div>':'<p class="tj-dim">沒有符合的教材。</p>');
   }
-
-  function renderAll(){ renderMap(); renderProg(); renderMedia(); if(document.getElementById('tj-node').style.display!=='none'){ var c=document.querySelector('#tj-node .tj-ntitle'); if(c){ var f=TJ_NODES.filter(function(n){return n.n===c.textContent})[0]; if(f) renderNode(f.id); } } }
 
   document.addEventListener('click',function(e){
     var t=e.target.closest?e.target.closest('[data-n],[data-k]'):null;
     if(!t) return;
     if(t.hasAttribute('data-k')){ F[t.getAttribute('data-k')]=t.getAttribute('data-v'); renderFilters(); renderMedia(); return; }
     var id=t.getAttribute('data-n');
-    if(t.hasAttribute('data-v')){ setSt(id, +t.getAttribute('data-v')); renderNode(id); return; }
-    if(!NI[id]) return;
+    if(t.classList.contains('tj-nsave')){
+      var ta=document.getElementById('tj-note');
+      D.n[id]=ta.value; save(); renderProg();
+      var msg=document.getElementById('tj-nmsg'); msg.textContent='已儲存'; setTimeout(function(){msg.textContent='';},1800);
+      return;
+    }
+    if(t.hasAttribute('data-v')){ setSt(id,+t.getAttribute('data-v')); if(document.querySelector('.tj-ntitle[data-cur="'+id+'"]')) renderNode(id); return; }
+    if(t.tagName==='TEXTAREA'||!NI[id]) return;
     renderNode(id);
     var box=document.getElementById('tj-node');
-    var y=box.getBoundingClientRect().top+window.scrollY-72;
-    window.scrollTo({top:y,behavior:'smooth'});
+    window.scrollTo({top:box.getBoundingClientRect().top+window.scrollY-72,behavior:'smooth'});
   });
 
   renderMap(); renderProg(); renderTerm(); renderTeacher(); renderFilters(); renderMedia();
