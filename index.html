@@ -1750,7 +1750,7 @@ h3[id],h4[id]{scroll-margin-top:72px}
   </details>
 
   <div class="key"><b>每日最小配方（15 分鐘）：</b>無極樁 5 分 → 重心轉換 20 趟 → 鬆肩沉肘 10 次 → 若已學套路，慢打一遍二十四式（約 6 分）。<b>每天做比一週做一次久有效得多</b>——這一點與靜坐日課的道理相同。</div>
-  <div class="note"><b>教材資料狀態：</b>標示<b>「未驗證」</b>的卡片，其連結取自搜尋索引、標題與頻道可對上，但本機環境無法開啟該平台的影片頁做最後確認，第一次點的時候順手確認一下。凌音目前<b>沒有</b>任何可驗證的公開連結，因此該老師名下為 0 筆——不用假資料補。</div>
+  <div class="note"><b>教材資料狀態：</b>標示<b>「未驗證」</b>的卡片，其連結取自搜尋索引、標題與頻道對得上，但沙箱環境開不了該平台的影片頁做最後確認，第一次點的時候順手確認一下。<b>Facebook 的兩支是在瀏覽器裡實際開啟確認過的</b>，包含發布者與內文。所有教材一律外連原平台，不做站內嵌入。
 </section>
 
 
@@ -11381,7 +11381,7 @@ var TJ_NODES=[
   {n:'開合（緩慢）',goal:'體會軀幹的張與收',care:'配合呼吸但不憋氣，開為呼、合為吸',check:'開合時肋骨有沒有外翻'},
   {n:'畫圓不斷',goal:'訓練連續不斷',care:'單手在身前畫立圓，全程速度均勻不停頓',check:'圓的上下換向處有沒有頓一下'}],
 
- cond:['單人即可','建議錄影，看軌跡是弧線還是折線'], verify:['錄影看軌跡是弧線還是折線','手停住時，只轉胯手臂會不會被帶動','動作有沒有停頓點','肩膀是不是在代替胯做旋轉'],
+ cond:['單人即可','建議錄影，看軌跡是弧線還是折線','可搭配器械——劍花一類的腕部練習，手上有重量時代償最藏不住'], verify:['錄影看軌跡是弧線還是折線','手停住時，只轉胯手臂會不會被帶動','動作有沒有停頓點','肩膀是不是在代替胯做旋轉'],
  pre:['bafa'],next:['kua','form']},
 
 {id:'kua',n:'腰胯協調',st:1,
@@ -11551,17 +11551,18 @@ var TJ_TEACHERS=[
   see:['武術基本功','柔軟與活動度','步法','八法五步','太極十三式','二十四式','太乙游龍拳','太極劍','發力與身法示範'],
   use:'動作拆解、套路跟練、傳統武術基本功。',
   fit:['prep','step','bafa','form','circle'],
-  channels:[],
-  note:'本站目前<b>沒有</b>可驗證的公開影片連結。搜尋只找到一個同名個人臉書帳號，無法從本機開啟確認，因此不列入。請把你平常看的頁面或影片網址給我，我再補進資料層。'},
+  channels:[
+   {name:'太乙游龙拳-凌音',platform:'Facebook',url:'https://www.facebook.com/profile.php?id=61551052787269',status:'active'}],
+  note:'臉書專頁已確認（由你提供的分享連結反查到本人帳號）。她的內容以 Reel 短片為主，一支一個主題，適合當單項基本功的跟練。'},
  {id:'沅芷',
   see:['身形','樁功','鬆沉','開胯','身法','纏絲','圓轉','楊式','陳式','套路','太極基本功'],
   use:'身體結構、基本功、太極身法、纏絲與套路。',
   fit:['body','zhuang','song','kua','circle','form'],
   channels:[
    {name:'太极传承-沅芷',platform:'Bilibili',url:'https://space.bilibili.com/2100491909/',status:'active'},
-   {name:'太极沅芷',platform:'YouTube',url:'https://www.youtube.com/channel/UCy_PkgjbYfNfNlmP7YIifPw',status:'active'},
-   {name:'沅芷教太极',platform:'YouTube',url:'https://www.youtube.com/@user-yuanzhiteaching',status:'active'}],
-  note:'Bilibili 是目前內容最完整的一站。YouTube 兩個頻道以短片與演練片段為主，系統性教學較少。'},
+   {name:'沅芷教太极',platform:'YouTube',url:'https://www.youtube.com/@user-yuanzhiteaching',status:'active'},
+   {name:'沅芷·太极',platform:'Facebook',url:'https://www.facebook.com/profile.php?id=61582016533114',status:'active'}],
+  note:'Bilibili 是目前內容最完整的一站；臉書以 Reel 短片為主。YouTube 另有一個內容重疊的頻道「太极沅芷」，這裡只留一個。她另有付費課程官網（originfuture.net），<b>不列入本頁學習路線</b>，本頁只收公開免費內容。'},
  {id:'黃正斌',
   see:['黃性賢系（黃式太極）','鬆身','內勁','發勁','推手','擒拿','太極應用','白鶴拳'],
   use:'中後段的鬆沉、內勁、發勁、推手與應用。',
@@ -11598,6 +11599,16 @@ var TJ_MEDIA=[
   description:'短片，講立身中正與以腰為軸的關係。',
   whyUseful:'複習中正與腰胯這兩節時的快速提醒，不到一分鐘可以看完。'},
 
+ {id:'ly-jianhua3',teacher:'凌音',title:'三面劍花跟練版（武術基礎劍法）',platform:'Facebook',
+  url:'https://www.facebook.com/reel/867607619566323',level:'beginner',contentType:'基本功',
+  topics:['circle','prep'],form:'太極劍',free:true,recommended:true,status:'active',
+  description:'三面劍花的慢速跟練，原文標「保姆級跟練」，屬劍法基本功。',
+  whyUseful:'腕部圓轉的<b>器械版本</b>——手上有重量時，肩有沒有代償會立刻現形。當作圓轉／纏絲那一節的外部檢查題。'},
+ {id:'yz-qixue3',teacher:'沅芷',title:'氣血不足，你就練這三個動作',platform:'Facebook',
+  url:'https://www.facebook.com/reel/935699562375513',level:'beginner',contentType:'基本功',
+  topics:['prep'],form:'',free:true,recommended:true,status:'active',
+  description:'三個簡短的導引動作，短片形式，跟著做即可。',
+  whyUseful:'養生向、不是太極技術主線，當<b>練拳前的熱身</b>用。動作短，忙的日子拿來墊檔。'},
  {id:'hzb-school',teacher:'黃正斌',title:'黃式太極黃正斌師父(Richard Huang)武館招生影片',platform:'YouTube',
   url:'https://www.youtube.com/watch?v=DkgZZQMjGsY',level:'beginner',contentType:'示範',
   topics:['song','tuishou'],form:'黃性賢系',free:true,recommended:false,status:'unverified',
