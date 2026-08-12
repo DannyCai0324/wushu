@@ -1663,12 +1663,6 @@ h3[id],h4[id]{scroll-margin-top:72px}
   <div id="tj-term-box"></div>
   <div class="note"><b>為什麼要這樣分：</b>因為混在一起會產生兩種錯誤。一種是<b>過度延伸</b>——把「氣沉丹田」講成有某種物質流進下腹，然後推導出更多無法檢驗的結論。另一種是<b>全盤否定</b>——因為「氣」不是物質，就連帶否定練習本身的效果。<b>正確的做法是：練習方法照做、體感照描述、機制解釋保守。</b></div>
 
-  <h3 id="tj-solo">自學難度分級：什麼時候該停止只看影片</h3>
-  <p>這張表不是在判斷誰厲害，而是在回答一個很實際的問題：<b>什麼階段繼續看影片有價值，什麼階段該停止只靠影片。</b></p>
-  <div id="tj-lv-box"></div>
-  <div class="key"><b>一句話總結：</b>第一階段（綠、黃）靠影片＋錄影自檢可以走得很遠；第二階段末（橙）需要有人定期看你；<b>第三階段（紅）全部需要對象</b>——推手、聽勁、化勁沒有接觸就不存在，看再多影片也只是在看別人做。<br>
-  <b>找不到對象怎麼辦？</b>把時間投回鬆沉、整勁與套路品質，效益遠高於對著螢幕模擬推手。</div>
-
   <h3 id="tj-teacher">老師與流派（教材來源，第二層資料）</h3>
   <p>這一節刻意放在能力節點<b>後面</b>。老師是教材的來源，不是學習的分類軸——同一位老師的內容會散落在不同節點上，而同一個節點也會有不同老師的教材。</p>
   <div id="tj-teacher-box"></div>
@@ -11722,15 +11716,6 @@ var TJ_MEDIA=[
         +'<p class="tj-no"><b>不要過度延伸：</b>'+n.term.no+'</p></details>';
     }).join('');
   }
-  /* --- 自學分級表 --- */
-  function renderLv(){
-    var h='<table class="tj-dt"><tr><th style="width:150px">項目</th><th style="width:210px">自學程度</th><th>為什麼</th></tr>';
-    TJ_NODES.forEach(function(n){
-      var L=TJ_LV[n.lv];
-      h+='<tr><td>'+link(n.id)+'</td><td><span class="tj-lvb '+L.c+'"><i class="tj-dot '+L.c+'"></i>'+L.t+'</span></td><td>'+L.d+'</td></tr>';
-    });
-    document.getElementById('tj-lv-box').innerHTML=h+'</table>';
-  }
   /* --- 老師 --- */
   function renderTeacher(){
     document.getElementById('tj-teacher-box').innerHTML=TJ_TEACHERS.map(function(t){
@@ -11784,7 +11769,7 @@ var TJ_MEDIA=[
     window.scrollTo({top:y,behavior:'smooth'});
   });
 
-  renderMap(); renderProg(); renderTerm(); renderLv(); renderTeacher(); renderFilters(); renderMedia();
+  renderMap(); renderProg(); renderTerm(); renderTeacher(); renderFilters(); renderMedia();
 })();
 </script>
 </body>
