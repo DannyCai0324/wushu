@@ -9294,7 +9294,7 @@ h3[id],h4[id]{scroll-margin-top:72px}
   <h3>九、由相入運：九星看個人流年（紫白命星法）</h3>
   <p>玄空看的是「房子」的運；同一張洛書底圖倒過來，也可以看「人」的年運——這就是紫白命星法（日本九星氣學同源）。原理三句話：<b>每個人依出生年有一顆本命星</b>（一白～九紫）；<b>每年九星沿洛書軌跡走一格</b>，你的星每年換一個宮；<b>星落在哪一宮，那一年就是什麼主題</b>——九年走完一輪，像走過一整年的四季。</p>
   <h4>第一步・算你的本命星</h4>
-  <div class="key"><b>速算：</b>西元出生年各位數字相加、加到剩一位數，用 <b>11 減它</b>（結果大於 9 再減 9）。例：1998 → 1+9+9+8＝27 → 9 → 11−9＝<b>2（二黑）</b>；2000 → 2 → 11−2＝<b>9（九紫）</b>；1995 → 24 → 6 → 11−6＝<b>5（五黃）</b>。<b>立春前出生算前一年</b>（同八字換年規則）。<br><small>註：此為氣學通行式（男女同式）；傳統紫白另有女命別算一式，與本頁八宅「年命卦」（男 11 減、女 4 加）為不同系統，勿混用——八宅算的是配宅的東西四命，這裡算的是逐年運勢。</small></div>
+  <div class="key"><b>速算（男女不同式）：</b>西元出生年各位數字相加、加到剩一位數＝n。<b>男命：11 − n</b>；<b>女命：4 ＋ n</b>（結果大於 9 再減 9）。例：1998 → 1+9+9+8＝27 → 9 → 男 11−9＝<b>2（二黑）</b>、女 4+9＝13 → <b>4（四綠）</b>；2000 → 2 → 男 <b>9（九紫）</b>、女 4+2＝<b>6（六白）</b>。<b>立春前出生算前一年</b>（同八字換年規則）。<br><small>註：日本九星氣學另有「男女同式」的通行算法（皆用 11 減）；本頁採傳統紫白的男女分式。此式與八宅「年命卦」公式同形，但用途不同——八宅算的是配宅的東西四命，這裡算的是逐年運勢，勿混用。</small></div>
   <h4>第二步・查你的星今年在哪一宮</h4>
   <p>每年（立春起）年星入中、其餘八星跟著沿洛書軌跡移動。例：<b>2026 丙午年一白入中</b>，四綠命的人飛到<b>艮宮（東北）——轉換年</b>；2027 丁未年九紫入中，四綠到<b>離宮——高峰年</b>。二十年的完整位置已算好：</p>
   <details><summary>二十年速查表（2024–2043）：你的命星每年落在哪一宮</summary>
@@ -9342,7 +9342,8 @@ h3[id],h4[id]{scroll-margin-top:72px}
   <div class="card" id="zb-calc">
     <p style="margin-bottom:10px">
       查詢日期 <input id="zb-date" type="date" min="2024-01-01" max="2043-12-31" style="padding:4px 8px;border:1px solid #46335f;border-radius:5px;background:#231637;color:#eee">
-      　你的出生西元年（選填，用來標亮你那一列） <input id="zb-y" type="number" min="1920" max="2043" placeholder="1998" style="width:90px;padding:4px 8px;border:1px solid #46335f;border-radius:5px;background:#231637;color:#eee">
+      　你的出生西元年＋性別（選填，用來標亮你那一列） <input id="zb-y" type="number" min="1920" max="2043" placeholder="1998" style="width:90px;padding:4px 8px;border:1px solid #46335f;border-radius:5px;background:#231637;color:#eee">
+      <select id="zb-g" style="padding:4px 8px;border:1px solid #46335f;border-radius:5px;background:#231637;color:#eee"><option value="m">男</option><option value="f">女</option></select>
       　<button id="zb-go" style="padding:4px 16px;border:1px solid #c9a227;border-radius:5px;background:#33270f;color:#e6c869;cursor:pointer;font-weight:700">算</button>
     </p>
     <div id="zb-cap" class="key" style="display:none"></div>
@@ -10755,7 +10756,7 @@ h3[id],h4[id]{scroll-margin-top:72px}
   var INFO={1:['○','官貴人緣','zbg'],2:['✕','病符保健','zbx'],3:['✕','是非口舌','zbx'],4:['○','文昌進修','zbg'],5:['✕✕','災星忌動','zbx'],6:['△','權威驛馬','zbn'],7:['✕','破財口舌','zbx'],8:['○','財星置產','zbg'],9:['◎','當令最旺','zbb']};
   var MN=['寅月（正月）','卯月（二月）','辰月（三月）','巳月（四月）','午月（五月）','未月（六月）','申月（七月）','酉月（八月）','戌月（九月）','亥月（十月）','子月（十一月）','丑月（十二月）'];
   var G='甲乙丙丁戊己庚辛壬癸',Z='子丑寅卯辰巳午未申酉戌亥';
-  function star(y){var s=String(y).split('').reduce(function(a,b){return a+ +b},0);while(s>9)s=String(s).split('').reduce(function(a,b){return a+ +b},0);s=11-s;return s>9?s-9:s}
+  function star(y,f){var s=String(y).split('').reduce(function(a,b){return a+ +b},0);while(s>9)s=String(s).split('').reduce(function(a,b){return a+ +b},0);s=f?4+s:11-s;return s>9?s-9:s}
   function inc(C,i){return ((C-1+i)%9)+1}
   function cell(C,i){var S=inc(C,i),f=INFO[S];
     return '<b class="'+f[2]+'">'+STARS[S-1].slice(0,2)+'入 '+f[0]+'</b><br><small>'+f[1]+'</small>'}
@@ -10773,11 +10774,11 @@ h3[id],h4[id]{scroll-margin-top:72px}
     var bestOwner={5:'一白',6:'二黑',7:'三碧',8:'四綠',1:'六白',2:'七赤',3:'八白',4:'九紫',0:'—'}[bi];
     document.getElementById('zb-cap').style.display='block';
     document.getElementById('zb-cap').innerHTML='<b>'+v+'</b>｜'+G[(ey-4)%10]+Z[z]+'年・'+MN[mi]+'｜年星 <b>'+STARS[yc-1].slice(0,2)+'</b>入中・月星 <b>'+STARS[mc-1].slice(0,2)+'</b>入中・日星 <b>'+STARS[dc-1].slice(0,2)+'</b>入中<br>本年九紫（當令）飛入 <b class="zbb">'+bestPal+'宮</b>——'+bestOwner+'命年運最佳；五黃飛入 <b class="zbx">'+PATH[((5-yc)%9+9)%9]+'宮</b>，該命與該方位今年忌動。';
-    var by=+document.getElementById('zb-y').value, mine=(by&&by>1900)?star(by):0;
+    var by=+document.getElementById('zb-y').value, fem=document.getElementById('zb-g').value=='f', mine=(by&&by>1900)?star(by,fem):0;
     var html='<table class="tc"><tr><th>本命（卦命）</th><th>流年入宮</th><th>流月入宮</th><th>流日入宮</th></tr>';
     for(var s=1;s<=9;s++){
       var hl=(s==mine)?' style="outline:2px solid #d4af37;outline-offset:-2px"':'';
-      var label='<b>'+STARS[s-1]+'</b>'+(s==mine?'（你）':'');
+      var label='<b>'+STARS[s-1]+'</b>'+(s==mine?('（你・'+(fem?'女':'男')+'命）'):'');
       if(s==5){
         html+='<tr'+hl+'><td>'+label+'<br><small>無本宮・男寄坤女寄艮</small></td>'
           +['<td><small>男 '+mini(yc,6)+'<br>女 '+mini(yc,3)+'</small></td>',
@@ -10793,6 +10794,7 @@ h3[id],h4[id]{scroll-margin-top:72px}
       +'<p><small>◎當令最旺　○吉　△半吉　✕凶　✕✕大凶。「X入」＝該星飛進你的本命宮。想看「你的星走到哪一宮」（隨星法），查上方二十年速查表與年運主題表。</small></p>';
   }
   document.getElementById('zb-go').addEventListener('click',run);
+  document.getElementById('zb-g').addEventListener('change',run);
   var t=new Date(), ds=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
   if(ds>='2024-01-01'&&ds<='2043-12-31'){document.getElementById('zb-date').value=ds;run();}
 })();
